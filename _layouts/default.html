@@ -7,33 +7,7 @@
 	<title>{{ page.title }}</title>
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 	<link rel="stylesheet" type="text/css" href="/style/main-white.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="/style/jquery.cookie.js"></script>
-	<script type="text/javascript">
-		$(document).ready (function ()
-		{
-			if (parseInt($("body").css ("width")) < 1000)
-			{
-				$("#sidebar").css ("position", "relative")
-							 .css ("width", "100%");
-				$("#content").css ("margin-left", "0");
-			}
-
-			if ($.cookie('theme') == 'black')
-				$("link").attr("href", "/style/main-black.css");
-
-			$("#white").click (function ()
-			{
-				$("link").attr("href", "/style/main-white.css");
-				$.cookie('theme', 'white');
-			});
-			$("#black").click (function ()
-			{
-				$("link").attr("href", "/style/main-black.css");
-				$.cookie('theme', 'black');
-			});
-		});
-	</script>
+	{% include javascript.html %}
 	<style type="text/css">
 		#black, #white
 		{
@@ -42,20 +16,20 @@
 			height: 50px;
 			display: inline-block;
 			position: absolute;
-			left: 5px;
+			right: 10px;
 			bottom: 10px;
 		}
 
 		#white
 		{
 			background-color: #ffffff;
-			left: 65px;
+			right: 70px;
 		}
 	</style>
 </head>
 <body>
  	<div id="sidebar">
-		<a href="/"><div id="header"></div></a>
+		<a id="header" href="/"><img src="/style/idiotic.svg"></a>
 		{% include menu.html %}
 		<div id="black"></div>
 		<div id="white"></div>

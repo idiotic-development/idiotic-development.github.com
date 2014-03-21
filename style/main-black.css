@@ -123,18 +123,16 @@ hr:before
 	transform: rotate(45deg);
 }
 
-#header
+#header img
 {
-	background: #005EB9 url("idiotic.svg") no-repeat 20px bottom;
-	background-size: calc(100% - 40px);
-	width: 100%;
-	height: 120px;
+	width: 90%;
+	margin: 5%;
 }
 
 #content
 {
-	width: calc(70% - 100px);
-	padding: 100px 50px 0 50px;
+	width: calc(70% - 50px);
+	padding: 100px 0 0 50px;
 	margin-left: 23%;
 }
 
@@ -180,8 +178,9 @@ ul#menu
 
 .box
 {
-	width: 740px;
-	height: 340px;
+	max-width: 740px;
+	min-height: 340px;
+	position: relative;
 }
 
 .box > a, .box > img
@@ -217,4 +216,28 @@ ul#menu
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+#sidebar.topdown
+{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+#sidebar.topdown #menu
+{
+	width: auto;
+	position: relative;
+}
+
+#sidebar.topdown #menu a
+{
+	font-size: 10vw;
+}
+
+#content.topdown
+{
+	width: auto;
+	margin-left: 0;
 }
