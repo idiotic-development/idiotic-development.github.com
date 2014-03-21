@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-US">
+<head>
+	<title>Cross Roads - Contact</title>
+	<link rel="stylesheet" type="text/css" href="styles/menu.css" />
+	<link rel="stylesheet" type="text/css" href="styles/main.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script src="http://static.zencodez.net/js/jquery.css3finalize-latest.min.js"></script>
+	<script type="text/javascript" src="js/jquery.all.js"></script>
+	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("input").focus(function (event)
+			{
+				$(this).css("border", "2px solid #4080FF");
+				value = $(this).attr("name") + " . . .";
+				if ($(this).attr("value") == value)
+					$(this).attr("value", "");
+			});
+			$("input").blur(function (event)
+			{
+				$(this).css("border", "1px solid #777777");
+ 				if ($(this).attr("value") == "")
+				{
+					value = $(this).attr("name") + " . . .";
+					$(this).attr("value", value);
+				}
+			});
+			$("textarea").focus(function (event)
+			{
+				$(this).css("border", "2px solid #4080FF");
+				if ($(this).html() == "Message . . .")
+					$(this).html("");
+			});
+			$("textarea").blur(function (event)
+			{
+				$(this).css("border", "1px solid #777777");
+ 				if ($(this).html() == "")
+					$(this).html("Message . . .");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bg-select">
+			<a href="#"><img src="styles/previous.png" alt="previous" style="border: 0;" /></a>
+			<a href="./" id="r">Random</a>
+			<a href="#"><img src="styles/next.png" alt="next"  style="border: 0;" /></a>
+		</div>
+		<div id="menu" class="trans">
+				<ul>
+					<li><a href="./">Home</a></li>
+
+					<li><a href="calendar.html">Calendar</a></li>
+
+					<li><a href="location.html">Location</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="links.html">Links</a></li>
+				</ul>
+		</div>
+		<div id="header">
+			<img src="styles/logo.png" alt="Cross Roads" id="logo" />
+			<div id="logo-box" class="trans">
+				<div id="logo-top"></div>
+				<div id="logo-bg"></div>
+				<div id="logo-bottom"></div>
+			</div>
+		</div>
+		<div id="main" class="alpha">
+			<form action="send.php" method="post" style="margin: 0 70px">
+				<input class="trans" type="text" name="Name" size="70" value="Name . . ." style="width: 500px" /><br />
+				<input class="trans" type="text" name="e-mail" size="70" value="e-mail . . ." style="width: 500px" /><br />
+				<input class="trans" type="text" name="Subject" size="70" value="Subject . . ." style="width: 500px" /><br />
+				<textarea class="trans" rows="10" style="width: 715px">Message . . .</textarea>
+				<input class="trans" type="submit" value="Send" style="float: right; width: 80px;" />
+			</form>
+			<p id="footer">Copyright &copy; 2010 Calvery Chaple Vista. All rights reserved. Design by <a href="mailto:chris-2422@hotmail.com?subject=Web Design">Christian Johnson</a></p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+---
+layout: archive
+title: Posts by tomatrow
+show: false
+---
+{% for post in site.posts %}
+{% if post.author == tomatrow %}
+<a href="{{ post.url }}">
+	<div class="post">
+		<h2>{{ post.title }}</h2>
+		<span style="position: relative; top: 5px">
+			<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
+			<span class="tags">{{ post.tags }}</span>
+			by {{ post.author }}
+		</span>
+		<p>{{ post.excerpt | strip_html }}</p>
+	</div>
+</a>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-US">
+<head>
+	<title>Cross Roads - Contact</title>
+	<link rel="stylesheet" type="text/css" href="styles/menu.css" />
+	<link rel="stylesheet" type="text/css" href="styles/main.css" />
+	<link rel="stylesheet" type="text/css" href="styles/supersized.css" media="screen" />		
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javasctipt" src="js/css3finalize.min.js"></script>
+	<script type="text/javascript" src="js/jquery.all.js"></script>
+	<script type="text/javascript" src="js/supersized.3.1.3.min.js"></script>
+	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("input").focus(function (event)
+			{
+				$(this).css("border", "2px solid #4080FF");
+				value = $(this).attr("name") + " . . .";
+				if ($(this).attr("value") == value)
+					$(this).attr("value", "");
+			});
+			$("input").blur(function (event)
+			{
+				$(this).css("border", "1px solid #777777");
+ 				if ($(this).attr("value") == "")
+				{
+					value = $(this).attr("name") + " . . .";
+					$(this).attr("value", value);
+				}
+			});
+			$("textarea").focus(function (event)
+			{
+				$(this).css("border", "2px solid #4080FF");
+				if ($(this).html() == "Message . . .")
+					$(this).html("");
+			});
+			$("textarea").blur(function (event)
+			{
+				$(this).css("border", "1px solid #777777");
+ 				if ($(this).html() == "")
+					$(this).html("Message . . .");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="menu" class="trans">
+				<ul>
+					<li><a href="./">Home</a></li>
+					<li><a href="calendar.html">Calendar</a></li>
+					<li><a href="http://events.constantcontact.com/register/event?llr=xzbgkheab&amp;oeidk=a07e5woti5l16bb6276">Sign Up For Camp</a></li>
+					<li><a href="forms.html">Forms</a></li>
+					<li><a href="location.html">Location</a></li>
+					<li><a href="contact.php">Contact</a></li>
+					<li><a href="links.html">Links</a></li>
+				</ul>
+		</div>
+			<div id="header">
+			<img src="styles/logo.png" alt="Cross Roads" id="logo" />
+			<div id="logo-box" class="trans">
+				<div id="logo-top"></div>
+				<div id="logo-bg"></div>
+				<div id="logo-bottom"></div>
+			</div>
+		</div>
+		<div id="main" class="alpha">
+		<div style="float: right; margin-right: 50px;"><p>CCV Phone: (760) 726-4224</p></div>
+			<?php
+			//Function to test for common spaming strings
+			function contains_bad_str ($str_to_test)
+			{
+				$bad_strings = array(
+					"content-type:",
+					"mime-version:",
+					"multipart/mixed",
+					"Content-Transfer-Encoding:",
+					"bcc:",
+					"cc:",
+					"to:"
+				);
+				
+				foreach ($bad_strings as $bad_string)
+				{
+					if (eregi ($bad_string, strtolower($str_to_test)))
+					{
+						echo "<p style='color:red; margin-left: 20px;'>'$bad_string' found. Suspected injection attempt - mail not being sent.</p>";
+						exit;
+					}
+				}
+			}
+
+			//Function to test for newline chars
+			function contains_newlines ($str_to_test)
+			{
+				if (preg_match ("/(%0A|%0D|\\n+|\\r+)/i", $str_to_test) != 0)
+				{
+					echo "<p style='color:red; margin-left: 20px;'>Newline found in '$str_to_test'. Suspected injection attempt - mail not being sent.</p>";
+					exit;
+				}
+			} 
+
+			//Set info vars
+			if (isset($_POST['e-mail']))
+			{
+				$to = "crossroadsvista@gmail.com";
+				$subject = $_POST['Subject'];
+				$body = $_POST['Body'];
+				$from = $_POST['e-mail'];
+				$name = $_POST['Name'];
+
+				//Test for common spamming strings
+				contains_bad_str($to);
+				contains_bad_str($subject);
+				contains_bad_str($body);
+
+				//Test for new lines in the wrong inputs
+				contains_newlines($to);
+				contains_newlines($subject);
+
+				//Add wraper to $body and $subject
+				$body = "The fallowing message was set by $name with the replay address of $from through crossroads.calvaryvista.com. Do replay directly to this email.\n\n$body";
+				$subject = "Sent from Crossroads, $subject";
+
+				//Validate e-mail
+				if (filter_var ($from, FILTER_VALIDATE_EMAIL))
+				{
+					//Send mail, and catch fails
+					if (mail ($to, $subject, $body))
+					{
+						echo ("<p style='color:green; margin-left: 20px;'>Message successfully sent!</p>");
+					} else
+					{
+						echo ("<p style='color:red; margin-left: 20px;'>Message delivery failed...</p>");
+					}
+				} else
+				{
+					echo ("<p style='color:red; margin-left: 20px;'>Invald e-mail...</p>");
+				}
+			}
+			?>
+			<form action="contact.php" method="post" style="margin: 0 70px">
+				<input class="trans" type="text" name="Name" size="70" value="Name . . ." style="width: 500px" /><br />
+				<input class="trans" type="text" name="e-mail" size="70" value="e-mail . . ." style="width: 500px" /><br />
+				<input class="trans" type="text" name="Subject" size="70" value="Subject . . ." style="width: 500px" /><br />
+				<textarea class="trans" name="Body" rows="10" style="width: 715px">Message . . .</textarea>
+				<input class="trans" type="submit" value="Send" style="float: right; width: 80px;" />
+			</form>
+			<p id="footer">Copyright &copy; 2010 Calvery Chaple Vista. All rights reserved. Design by <a href="mailto:chris-2422@hotmail.com?subject=Web Design">Christian Johnson</a></p>
+		</div>
+	</div>
+	<div id="controls-wrapper">
+		<div id="controls">
+			<div id="navigation">
+				<a id="prevslide" href="#">Prev</a>
+				<a id="pauseplay" href="#">Stop</a>
+				<a id="nextslide" href="#">Next</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

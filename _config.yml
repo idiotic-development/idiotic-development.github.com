@@ -1,0 +1,7 @@
+name: Idiotic Design and Development
+description: Living one mistake at a time.
+url: http://0.0.0.0:4000
+timezone: America/Los_Angeles
+markdown: kramdown
+kramdown:
+  input: GFM

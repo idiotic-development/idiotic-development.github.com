@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Development</title>
+	<link rel="alternate" type="application/rss+xml" title="Idiotic Design and Development" href="http://0.0.0.0:4000/feed.xml">
+	<link rel="stylesheet" type="text/css" href="/style/main-white.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="/style/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		$(document).ready (function ()
+		{
+			if (parseInt($("body").css ("width")) < 1000)
+			{
+				$("#sidebar").css ("position", "relative")
+							 .css ("width", "100%");
+				$("#content").css ("margin-left", "0");
+			}
+
+			if ($.cookie('theme') == 'black')
+				$("link").attr("href", "/style/main-black.css");
+
+			$("#white").click (function ()
+			{
+				$("link").attr("href", "/style/main-white.css");
+				$.cookie('theme', 'white');
+			});
+			$("#black").click (function ()
+			{
+				$("link").attr("href", "/style/main-black.css");
+				$.cookie('theme', 'black');
+			});
+		});
+	</script>
+	<style type="text/css">
+		#black, #white
+		{
+			background-color: #2d3339;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			position: absolute;
+			left: 5px;
+			bottom: 10px;
+		}
+
+		#white
+		{
+			background-color: #ffffff;
+			left: 65px;
+		}
+	</style>
+</head>
+<body>
+ 	<div id="sidebar">
+		<a href="/"><div id="header"></div></a>
+		<ul id="menu">
+	
+		
+			<li><a href="/development.html" id="current">Development</a></li>
+		
+	
+		
+			<li><a href="/design.html">Design</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/about.html">About</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/blog.html">Blog</a></li>
+		
+	
+		
+	
+		
+	
+</ul>
+
+		<div id="black"></div>
+		<div id="white"></div>
+	</div>
+	<div id="content">
+		<h1>Development</h1>
+		<hr noshade="true"><br>
+		<p>We have several projects in the works but none are ready to be released. Sorry.</p>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+	<title>Idiotic Design and Development</title>
+	<description>Living one mistake at a time.</description>	
+	<link>http://0.0.0.0:4000</link>
+	<atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+	
+	<item>
+		<title>5x5 Lego Carcassone</title>
+		<description>&lt;p&gt;I came across &lt;a href=&quot;http://www.iamcal.com/lego-carcassonne/&quot;&gt;this post&lt;/a&gt; on making a &lt;a href=&quot;http://boardgamegeek.com/boardgame/822/carcassonne&quot;&gt;Carcassone&lt;/a&gt; tile set out of Lego bricks yesterday. The post talks about how the individual tiles were designed and rendered, and ends with a sad conclusion: a real set would cost over $2,000. To make matters worse, the &lt;a href=&quot;http://ldd.lego.com/en-us/&quot;&gt;Lego Digital Designer (LDD)&lt;/a&gt;’s &lt;a href=&quot;http://ldd.lego.com/en-us/subpages/designbyme&quot;&gt;DESIGN byME&lt;/a&gt; site has been out of commission for a while now.&lt;/p&gt;
+
+&lt;p&gt;The post was updated with a 7x7 tileset, and I thought it could go even smaller, which would result in a more realistic price. I fired up the LDD, and several hours later:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/Carcassone_Tiles2.png&quot;&gt;&lt;img class=&quot;center&quot; src=&quot;/images/Carcassone_Tiles2.png&quot; width=&quot;100%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/Carcassone_Tiles1.png&quot;&gt;&lt;img class=&quot;center&quot; src=&quot;/images/Carcassone_Tiles1.png&quot; width=&quot;100%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s a functioning set of all 24 tiles! It was a ton of fun to build this. Playing with the LDD is like having an infinite pile of Legos, and there’s no diving through looking for that one piece: you can just search for it!&lt;/p&gt;
+
+&lt;p&gt;I borrowed a few design elements from other sets:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“Layered” effect like the 7x7 set&lt;/li&gt;
+  &lt;li&gt;Fantastic color choices from the 9x9 set&lt;/li&gt;
+  &lt;li&gt;Shrunk shield from 7x7 set down&lt;/li&gt;
+  &lt;li&gt;One blue base, so &lt;a href=&quot;http://boardgamegeek.com/boardgame/18836/carcassonne-the-river-ii&quot;&gt;The River&lt;/a&gt; could be added later&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I connected the tiles together and it looks like a real game would not only work, but it definitely gives the “map” feel that Carcassone is great at:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/Carcassone_Play2.png&quot;&gt;&lt;img class=&quot;center&quot; src=&quot;/images/Carcassone_Play2.png&quot; width=&quot;100%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/Carcassone_Play3.png&quot;&gt;&lt;img class=&quot;center&quot; src=&quot;/images/Carcassone_Play3.png&quot; width=&quot;100%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you generated a set of all 72 tiles, it clocks in at 975 pieces. Toss in 40 &lt;a href=&quot;http://www.bricklink.com/catalogList.asp?catType=M&amp;amp;catString=252&quot;&gt;microfigs&lt;/a&gt; and a scoreboard, and this could be an actual Lego set:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/Carcassone_Full.png&quot;&gt;&lt;img class=&quot;center&quot; src=&quot;/images/Carcassone_Full.png&quot; width=&quot;100%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;LDD even generates instructions for you, too! &lt;a href=&quot;http://quaran.to/lego-carcassonne&quot;&gt;Read the play-by-play&lt;/a&gt; of building this set, and check out the models for yourself &lt;a href=&quot;https://github.com/qrush/lego-carcassonne&quot;&gt;on GitHub&lt;/a&gt;. I’d love to play a game on one of these someday.&lt;/p&gt;
+
+&lt;p&gt;So, how could that happen? &lt;a href=&quot;http://lego.cuusoo.com&quot;&gt;Cuusoo&lt;/a&gt;? Kickstarter? Hunting down the pieces individually via &lt;a href=&quot;http://www.bricklink.com/&quot;&gt;Bricklink&lt;/a&gt; feels like a huge hassle. Also, the colors chosen are all not available, so it might be impossible to order this in the current color palette. If you have suggestions, let me know &lt;a href=&quot;http://twitter.com/qrush&quot;&gt;on Twitter&lt;/a&gt;!&lt;/p&gt;
+</description>
+		<pubDate>Mon, 06 Jan 2014 00:00:00 -0800</pubDate>
+		<link>http://0.0.0.0:4000/2014/01/06/5x5-lego-carcassone.html</link>
+		<guid isPermaLink="true">http://0.0.0.0:4000/2014/01/06/5x5-lego-carcassone.html</guid>
+	</item>
+	
+	<item>
+		<title>Sync and edit files on two iPhones</title>
+		<description>&lt;p&gt;Need to sync a file between two iPhones and edit it on both? Here’s what you need:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/plaintext-dropbox-text-editing/id391254385?mt=8&amp;amp;ign-mpt=uo%3D4&quot;&gt;PlainText&lt;/a&gt; installed on both phones&lt;/li&gt;
+  &lt;li&gt;Two &lt;a href=&quot;https://db.tt/x1Zv1vA6&quot;&gt;Dropbox&lt;/a&gt; accounts (free will do!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s a little tricky to get going once installed, so here’s what I did:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.dropbox.com/help/19/en&quot;&gt;Share a folder&lt;/a&gt; between both accounts. Don’t share an individual file.&lt;/li&gt;
+  &lt;li&gt;When linking your Dropbox account, choose &lt;em&gt;Link to Entire Dropbox&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Create a file in the shared folder, and edit away!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That should really be it. Your file should now be synced on each phone after you edit it, and you won’t lose it since it’s in Dropbox! Here’s a screenshot of PlainText in action:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; alt=&quot;PlainText screenshot&quot; src=&quot;/images/plaintext.png&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Some great things about this setup:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It’s &lt;em&gt;free&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;It’s simple!&lt;/li&gt;
+  &lt;li&gt;Conflicts cause a copy of the file to be saved, so they’re not lost.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;whats-with-the-baby-related-emojis&quot;&gt;What’s with the baby related emojis?&lt;/h3&gt;
+
+&lt;p&gt;Consider this my first dad tech blog post! 11/12/13 was an awesome day for &lt;a href=&quot;http://twitter.com/aquaranto&quot;&gt;Amanda&lt;/a&gt; and me:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;Cameron Richard, 8lbs 3oz. 11/12/13 11:15PM. 👶🚀 &lt;a href=&quot;http://t.co/XdaKfkc1zd&quot;&gt;pic.twitter.com/XdaKfkc1zd&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nick Quaranto (@qrush) &lt;a href=&quot;https://twitter.com/qrush/statuses/400486577035829248&quot;&gt;November 13, 2013&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;We were starting to track feedings, wet diapers, and more in just Notes. However, I wanted to edit it too, and have a backup. I couldn’t believe how difficult to this was to get set up. There’s plenty of baby apps that do this (on one phone), and of course we could have used paper…but who wants to do that?&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;https://twitter.com/dangigante/status/401424018575994880&quot;&gt;Dan Gigante&lt;/a&gt; for suggesting this approach out. I hope this helps out someone else, even if it’s not for syncing baby logs. &lt;a href=&quot;http://twitter.com/qrush&quot;&gt;Let me know&lt;/a&gt; if it does!&lt;/p&gt;
+</description>
+		<pubDate>Sat, 23 Nov 2013 00:00:00 -0800</pubDate>
+		<link>http://0.0.0.0:4000/2013/11/23/sync-and-edit-files-on-two-iphones.html</link>
+		<guid isPermaLink="true">http://0.0.0.0:4000/2013/11/23/sync-and-edit-files-on-two-iphones.html</guid>
+	</item>
+	
+</channel>
+</rss>

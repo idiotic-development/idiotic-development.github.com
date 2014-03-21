@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>About</title>
+	<link rel="alternate" type="application/rss+xml" title="Idiotic Design and Development" href="http://0.0.0.0:4000/feed.xml">
+	<link rel="stylesheet" type="text/css" href="/style/main-white.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="/style/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		$(document).ready (function ()
+		{
+			if (parseInt($("body").css ("width")) < 1000)
+			{
+				$("#sidebar").css ("position", "relative")
+							 .css ("width", "100%");
+				$("#content").css ("margin-left", "0");
+			}
+
+			if ($.cookie('theme') == 'black')
+				$("link").attr("href", "/style/main-black.css");
+
+			$("#white").click (function ()
+			{
+				$("link").attr("href", "/style/main-white.css");
+				$.cookie('theme', 'white');
+			});
+			$("#black").click (function ()
+			{
+				$("link").attr("href", "/style/main-black.css");
+				$.cookie('theme', 'black');
+			});
+		});
+	</script>
+	<style type="text/css">
+		#black, #white
+		{
+			background-color: #2d3339;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			position: absolute;
+			left: 5px;
+			bottom: 10px;
+		}
+
+		#white
+		{
+			background-color: #ffffff;
+			left: 65px;
+		}
+	</style>
+</head>
+<body>
+ 	<div id="sidebar">
+		<a href="/"><div id="header"></div></a>
+		<ul id="menu">
+	
+		
+			<li><a href="/development.html">Development</a></li>
+		
+	
+		
+			<li><a href="/design.html">Design</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/about.html" id="current">About</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/blog.html">Blog</a></li>
+		
+	
+		
+	
+		
+	
+</ul>
+
+		<div id="black"></div>
+		<div id="white"></div>
+	</div>
+	<div id="content">
+		<h1>About</h1>
+		<hr noshade="true"><br>
+		<div class="box" style="margin: 50px">
+	<img src="/assets/redhatter.png">
+	<h3><a href="/redhatter.html">Red Hatter</a></h3>
+	<p>In Jr high there was a website that didn't exist I wanted to use, so I did the logical thing, I made it. I quickly became irritated with the limitations of the WYSIWYG editor I was using and decided to learn html css. Over the next couple years I buried myself in html and css then moved on to javascript and php. I started experimenting with java toward the beginning of high school. I was originally learning java too create apps for the web, but I soon discovered I enjoyed the complexity and structurer of full software development. At some point I started using linux exclusively and was drawn in to using bash then zsh. Since then I have worked with c/c++, python, and ruby among others. This past year I have been exploring mobile app development, more info on the development page. I am currently pursuing a bachelor's in computer science</p>
+</div
+	</div>
+ </body>
+</html>

@@ -9,47 +9,45 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="353.8125"
-   height="94.429688"
-   id="svg2985"
+   width="632.72876"
+   height="105.23606"
+   id="svg2998"
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="idiotic-text.svg">
   <defs
-     id="defs2987" />
+     id="defs3000" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
-     bordercolor="#ffffff"
-     borderopacity="0.0"
+     bordercolor="#666666"
+     borderopacity="1.0"
      inkscape:pageopacity="0.0"
-     inkscape:pageshadow="0"
-     inkscape:zoom="0.7"
-     inkscape:cx="225.67267"
-     inkscape:cy="46.157028"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-127.92131"
+     inkscape:cy="57.618052"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="10"
      inkscape:window-width="1366"
      inkscape:window-height="749"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     showborder="true"
-     borderlayer="true" />
+     inkscape:window-maximized="1" />
   <metadata
-     id="metadata2990">
+     id="metadata3003">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -57,10 +55,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(185.89285,-193.83539)">
+     transform="translate(-58.6356,-484.74416)">
     <g
        id="g3018"
-       style="fill:#ffffff">
+       style="fill:#ffffff"
+       transform="translate(244.52845,290.90877)">
       <g
          id="text2993"
          style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Vrinda;-inkscape-font-specification:Vrinda Bold">
@@ -127,5 +126,20 @@
          transform="matrix(0.51993142,0,0,0.51993142,114.63514,114.79399)"
          style="fill:#ffffff" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:helvetica;-inkscape-font-specification:helvetica"
+       x="455.77844"
+       y="522.03101"
+       id="text3017"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3019"
+         x="455.77844"
+         y="522.03101">Design and</tspan><tspan
+         sodipodi:role="line"
+         x="455.77844"
+         y="572.03101"
+         id="tspan3021">Development</tspan></text>
   </g>
 </svg>

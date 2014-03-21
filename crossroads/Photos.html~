@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-US">
+<head>
+	<title>Cross Roads - Template</title>
+	<link rel="stylesheet" type="text/css" href="styles/menu.css" />
+	<link rel="stylesheet" type="text/css" href="styles/main.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script src="http://static.zencodez.net/js/jquery.css3finalize-latest.min.js"></script>
+	<script type="text/javascript" src="js/jquery.all.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			//display a random background image
+			var url = $.getURLParam('image');
+			var num = $.getURLParam("b");
+			if (num == null)
+				num = $.randomMax(1,7);
+
+			if (url == null)
+				url = 'styles/backgrounds/' + num + ".jpg";
+
+			$('html').css('background-image', 'url(' + url + ')');
+			$('[alt="next"]').parent().click(function (event)
+			{
+				window.location = window.location.hostname + window.location.pathname + "?b=" + ((num != 7) ? (parseInt(num)+1) : num);
+				event.preventDefault();
+			});
+			$('[alt="previous"]').parent().click(function (event)
+			{
+				window.location = window.location.hostname + window.location.pathname + "?b=" +((num != 1) ? (parseInt(num)-1) : num);
+				event.preventDefault();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bg-select">
+			<a href="#"><img src="styles/previous.png" alt="previous" style="border: 0;" /></a>
+			<a href="./" id="r">Random</a>
+			<a href="#"><img src="styles/next.png" alt="next"  style="border: 0;" /></a>
+		</div>
+		<div id="menu" class="trans">
+				<ul>
+					<li><a href="./">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="calendar.html">Calendar</a></li>
+
+					<li><a href="location.html">Location</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="links.html">Links</a></li>
+				</ul>
+		</div>
+		<div id="header">
+			<img src="styles/logo.png" alt="Cross Roads" id="logo" />
+			<div id="logo-box" class="trans">
+				<div id="logo-top"></div>
+				<div id="logo-bg"></div>
+				<div id="logo-bottom"></div>
+			</div>
+		</div>
+		<div id="main" class="alpha">
+			<img src="" alt="photo" />
+			<p id="footer">Copyright &copy; 2010 Calvery Chaple Vista. All rights reserved.
+			Design by <a href="mailto:chris-2422@hotmail.com?subject=Web Design">Christian Johnson</a></p>
+		</div>
+	</div>
+</body>
+</html>

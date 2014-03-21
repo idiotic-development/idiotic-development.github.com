@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Sync and edit files on two iPhones</title>
+	<link rel="alternate" type="application/rss+xml" title="Idiotic Design and Development" href="http://0.0.0.0:4000/feed.xml">
+	<link rel="stylesheet" type="text/css" href="/style/main-white.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="/style/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		$(document).ready (function ()
+		{
+			if (parseInt($("body").css ("width")) < 1000)
+			{
+				$("#sidebar").css ("position", "relative")
+							 .css ("width", "100%");
+				$("#content").css ("margin-left", "0");
+			}
+
+			if ($.cookie('theme') == 'black')
+				$("link").attr("href", "/style/main-black.css");
+
+			$("#white").click (function ()
+			{
+				$("link").attr("href", "/style/main-white.css");
+				$.cookie('theme', 'white');
+			});
+			$("#black").click (function ()
+			{
+				$("link").attr("href", "/style/main-black.css");
+				$.cookie('theme', 'black');
+			});
+		});
+	</script>
+	<style type="text/css">
+		#black, #white
+		{
+			background-color: #2d3339;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			position: absolute;
+			left: 5px;
+			bottom: 10px;
+		}
+
+		#white
+		{
+			background-color: #ffffff;
+			left: 65px;
+		}
+	</style>
+</head>
+<body>
+ 	<div id="sidebar">
+		<a href="/"><div id="header"></div></a>
+		<ul id="menu">
+	
+		
+			<li><a href="/development.html">Development</a></li>
+		
+	
+		
+			<li><a href="/design.html">Design</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/about.html">About</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/blog.html">Blog</a></li>
+		
+	
+		
+	
+		
+	
+</ul>
+
+		<div id="black"></div>
+		<div id="white"></div>
+	</div>
+	<div id="content">
+		<h1>Sync and edit files on two iPhones</h1>
+		<hr noshade="true"><br>
+		<article>
+	<header style="position: relative; top: -38px; color: #999">
+		<time datetime="2013-11-23T00:00:00-08:00">November 23, 2013</time>
+		&nbsp;<span class="tags">sync-iphones</span>
+		&nbsp;by <a href="/.html"></a>
+	</header>
+	<p>Need to sync a file between two iPhones and edit it on both? Here’s what you need:</p>
+
+<ul>
+  <li><a href="https://itunes.apple.com/us/app/plaintext-dropbox-text-editing/id391254385?mt=8&amp;ign-mpt=uo%3D4">PlainText</a> installed on both phones</li>
+  <li>Two <a href="https://db.tt/x1Zv1vA6">Dropbox</a> accounts (free will do!)</li>
+</ul>
+
+<p>It’s a little tricky to get going once installed, so here’s what I did:</p>
+
+<ol>
+  <li><a href="https://www.dropbox.com/help/19/en">Share a folder</a> between both accounts. Don’t share an individual file.</li>
+  <li>When linking your Dropbox account, choose <em>Link to Entire Dropbox</em>.</li>
+  <li>Create a file in the shared folder, and edit away!</li>
+</ol>
+
+<p>That should really be it. Your file should now be synced on each phone after you edit it, and you won’t lose it since it’s in Dropbox! Here’s a screenshot of PlainText in action:</p>
+
+<p><img class="center" alt="PlainText screenshot" src="/images/plaintext.png" width="50%" /></p>
+
+<p>Some great things about this setup:</p>
+
+<ul>
+  <li>It’s <em>free</em>.</li>
+  <li>It’s simple!</li>
+  <li>Conflicts cause a copy of the file to be saved, so they’re not lost.</li>
+</ul>
+
+<h3 id="whats-with-the-baby-related-emojis">What’s with the baby related emojis?</h3>
+
+<p>Consider this my first dad tech blog post! 11/12/13 was an awesome day for <a href="http://twitter.com/aquaranto">Amanda</a> and me:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>Cameron Richard, 8lbs 3oz. 11/12/13 11:15PM. 👶🚀 <a href="http://t.co/XdaKfkc1zd">pic.twitter.com/XdaKfkc1zd</a></p>&mdash; Nick Quaranto (@qrush) <a href="https://twitter.com/qrush/statuses/400486577035829248">November 13, 2013</a></blockquote>
+
+<p>We were starting to track feedings, wet diapers, and more in just Notes. However, I wanted to edit it too, and have a backup. I couldn’t believe how difficult to this was to get set up. There’s plenty of baby apps that do this (on one phone), and of course we could have used paper…but who wants to do that?</p>
+
+<p>Thanks to <a href="https://twitter.com/dangigante/status/401424018575994880">Dan Gigante</a> for suggesting this approach out. I hope this helps out someone else, even if it’s not for syncing baby logs. <a href="http://twitter.com/qrush">Let me know</a> if it does!</p>
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'idioticdev';
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+ </body>
+</html>

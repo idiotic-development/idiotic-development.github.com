@@ -1,0 +1,41 @@
+#menu
+{
+	height: 100px;
+	width: 100%;
+	top: 50px;
+	background-color: #000000;
+	z-index: 1;
+	position: relative;
+}
+
+#menu ul
+{
+	width: 870px;
+	margin: 0 auto;
+	text-align: right;
+}
+
+#menu li
+{
+	list-style-type: none;
+	display: inline-block;
+	padding: 0 10px;
+	margin: 0 10px;
+	color: #999999;
+}
+
+#menu li:hover
+{
+	color: #EEEEEE;
+	text-shadow: white 0 0 40px;
+}
+
+#menu ul a
+{
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+	height: 60px;
+	padding-top: 40px;
+	font-weight: bold;
+}
