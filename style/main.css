@@ -5,8 +5,8 @@ html, body
 
 body
 {
-	color: #ffffff;
-	background-color: #2D3339;
+	color: #111111;
+	background-color: #ffffff;
 	font-family: open_sanslight, sans-serif;
 	margin: 0;
 }
@@ -24,7 +24,7 @@ body
 
 h1, h2, h3, h4, h5, h6
 {
-	color: #dddddd;
+	color: #505050;
 	font-family: helvetica, open_sanslight, sans-serif;
 	margin: 20px 0;
 }
@@ -36,7 +36,7 @@ h1
 
 h3 a
 {
-	color: #cccccc;
+	color: #505050;
 }
 
 p
@@ -46,13 +46,13 @@ p
 
 a
 {
-	color: #eeeeee;
+	color: #888888;
 	text-decoration: none;
 }
 
 a:hover
 {
-	color: #ffffff;
+	color: #444444;
 }
 
 time:before
@@ -96,7 +96,7 @@ a[target="_blank"]
 
 hr
 {
-	color: #3D4349;
+	border-color: #eeeeee;
 	width: 75%;
 	position: relative;
 	right: 50px;
@@ -106,7 +106,7 @@ hr
 hr:after, hr:before
 {
 	content: "";
-	background-color: #383d44;
+	background-color: #cccccc;
 	width: 20px;
 	height: 1px;
 	position: absolute;
@@ -114,6 +114,9 @@ hr:after, hr:before
 	top: 6px;
 
 	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
 }
 
 hr:before
@@ -121,6 +124,9 @@ hr:before
 	top: -7px;
 
 	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }
 
 #header img
@@ -131,7 +137,9 @@ hr:before
 
 #content
 {
-	width: calc(70% - 50px);
+	width: calc(70% - 42px);
+	width: -moz-calc(70% - 42px);
+	width: -webkit-calc(70% - 42px);
 	padding: 100px 0 0 50px;
 	margin-left: 23%;
 }
@@ -148,27 +156,30 @@ hr:before
 ul#menu
 {
 	list-style: none;
-	width: 250px;
+	width: 80%;
 	position: absolute;
 	right: 0;
 }
 
 #menu a#current
 {
-	border-right-color: #444444;
+	border-right-color: #666666;
 }
 
 #menu a
 {
-	color: #222222;
-	border-right: 5px solid #333333;
+	color: #ffffff;
+	border-right: 5px solid #555;
 	text-decoration: none;
-	font-size: 28px;
+	font-size: 2vw;
 	letter-spacing: 0;
 	padding: 10px;
 	display: block;
 
 	transition: all 1s;
+	-ms-transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
 }
 
 #menu a:hover
@@ -192,6 +203,9 @@ ul#menu
 .box img
 {
 	border-radius: 50%;
+	-ms-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
 }
 
 .box a img
@@ -199,18 +213,24 @@ ul#menu
 	width: 100%;
 
 	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
 
 .box a img:hover
 {
 	border-radius: 0px;
+	-ms-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
 }
 
 .box:after
 {
 	content: "";
-	border-top: 1px solid #ffffff;
-	border-right: 1px solid #ffffff;
+	border-top: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
 	width: 20px;
 	height: 20px;
 	position: absolute;

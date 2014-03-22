@@ -1,0 +1,57 @@
+body
+{
+	color: #ffffff;
+	background-color: #2D3339;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	color: #dddddd;
+}
+
+h3 a
+{
+	color: #cccccc;
+}
+
+a
+{
+	color: #eeeeee;
+}
+
+a:hover
+{
+	color: #ffffff;
+}
+
+hr
+{
+	border-color: #3D4349;
+}
+
+hr:after, hr:before
+{
+	background-color: #383d44;
+}
+
+#sidebar
+{
+	background-color: #005EB9;
+}
+
+#menu a#current
+{
+	border-right-color: #444444;
+}
+
+#menu a
+{
+	color: #222222;
+	border-right: 5px solid #333333;
+}
+
+.box:after
+{
+	border-top: 1px solid #ffffff;
+	border-right: 1px solid #ffffff;
+}

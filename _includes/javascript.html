@@ -7,16 +7,24 @@
 			$("#sidebar, #content").addClass ("topdown");
 
 		if ($.cookie('theme') == 'black')
-			$("link").attr("href", "/style/main-black.css");
+			$(document.createElement("link"))
+				.attr ("rel", "stylesheet")
+				.attr("type", "text/css")
+				.attr ("href", "/style/black.css")
+				.appendTo ("head");
 
 		$("#white").click (function ()
 		{
-			$("link").attr("href", "/style/main-white.css");
+			$("link[href='/style/black.css']").remove ();
 			$.cookie('theme', 'white');
 		});
 		$("#black").click (function ()
 		{
-			$("link").attr("href", "/style/main-black.css");
+			$(document.createElement("link"))
+				.attr ("rel", "stylesheet")
+				.attr("type", "text/css")
+				.attr ("href", "/style/black.css")
+				.appendTo ("head");
 			$.cookie('theme', 'black');
 		});
 	});
