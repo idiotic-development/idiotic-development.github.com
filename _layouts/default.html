@@ -1,9 +1,9 @@
 ---
 ---
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
 	<title>{{ page.title }}</title>
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 	<link rel="stylesheet" type="text/css" href="/style/main.css">
@@ -29,14 +29,14 @@
 </head>
 <body>
  	<div id="sidebar">
-		<a id="header" href="/"><img src="/style/idiotic.svg"></a>
+		<a id="header" href="/"><img src="/style/idiotic.svg" alt="idiotic"></a>
 		{% include menu.html %}
 		<div id="black"></div>
 		<div id="white"></div>
 	</div>
 	<div id="content">
 		<h1>{{ page.title }}</h1>
-		<hr noshade="true"><br>
+		<hr><br>
 		{{ content }}
 	</div>
  </body>

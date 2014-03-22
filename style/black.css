@@ -26,12 +26,16 @@ a:hover
 
 hr
 {
-	border-color: #3D4349;
+	color: #eeeeee;
+	background-color: #eeeeee;
+	border-color: #eeeeee;
 }
 
 hr:after, hr:before
 {
+	color: #383d44;
 	background-color: #383d44;
+	border-color: #383d44;
 }
 
 #sidebar

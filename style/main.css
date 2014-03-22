@@ -96,8 +96,12 @@ a[target="_blank"]
 
 hr
 {
+	color: #eeeeee;
+	background-color: #eeeeee;
 	border-color: #eeeeee;
+	border-width: 0;
 	width: 75%;
+	height: 2px;
 	position: relative;
 	right: 50px;
 	float: left;
@@ -106,7 +110,9 @@ hr
 hr:after, hr:before
 {
 	content: "";
+	color: #cccccc;
 	background-color: #cccccc;
+	border-color: #cccccc;
 	width: 20px;
 	height: 1px;
 	position: absolute;
