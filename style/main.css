@@ -7,20 +7,19 @@ body
 {
 	color: #111111;
 	background-color: #ffffff;
-	font-family: open_sanslight, sans-serif;
+	font-family: OpenSans, sans-serif;
 	margin: 0;
 }
 
 @font-face {
-	font-family: 'open_sanslight';
-	src: url('openserif-webfont.eot');
-	src: url('openserif-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('openserif-webfont.woff') format('woff'),
-		 url('openserif-webfont.ttf') format('truetype'),
-		 url('openserif-webfont.svg#open_sanslight') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'OpenSans';
+	src: url('opensans/opensans.eot');
+	src: url('opensans/opensans.eot') format('embedded-opentype'),
+		 url('opensans/opensans.woff') format('woff'),
+		 url('opensans/opensans.ttf') format('truetype'),
+		 url('opensans/opensans.svg#OpenSansRegular') format('svg');
 }
+
 
 h1, h2, h3, h4, h5, h6
 {
@@ -85,11 +84,11 @@ a[target="_blank"]
 
 @font-face {
 	font-family: 'FontAwesome';
-	src: url('fontawesome-webfont.eot');
-	src: url('fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('fontawesome-webfont.woff') format('woff'),
-		 url('fontawesome-webfont.ttf') format('truetype'),
-		 url('fontawesome-webfont.svg#open_sanslight') format('svg');
+	src: url('symbles/fontawesome-webfont.eot');
+	src: url('symbles/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('symbles/fontawesome-webfont.woff') format('woff'),
+		 url('symbles/fontawesome-webfont.ttf') format('truetype'),
+		 url('symbles/fontawesome-webfont.svg#open_sanslight') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -161,10 +160,20 @@ hr:before
 
 ul#menu
 {
+	font-family: OpenSansLight;
 	list-style: none;
 	width: 80%;
 	position: absolute;
 	right: 0;
+}
+
+@font-face {
+	font-family: 'OpenSansLight';
+	src: url('opensans/opensans-light.eot');
+	src: url('opensans/opensans-light.eot') format('embedded-opentype'),
+		 url('opensans/opensans-light.woff') format('woff'),
+		 url('opensans/opensans-light.ttf') format('truetype'),
+		 url('opensans/opensans-light.svg#OpenSansRegular') format('svg');
 }
 
 #menu a#current
