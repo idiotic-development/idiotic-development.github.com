@@ -65,6 +65,11 @@ I do some more Googling. I bump my head against the desk a few times. I comb thr
 I was booting the install medium as UEFI. I'm not using UEFI, I do not have a UEFI partition. This must be the problem. Under the boot priority selection there's harddisk priority selection. Change that to my usb, save & reboot, repeat grub installation, reboot, and voilà!
 
 The moral of the story? Check your boot options *before* you install.
-    
-    
-    
+
+## Epilogue
+One last thing, we have to move the resolve file back. I forgot and it took me way to long to realize why I could't connect on some networks.
+
+{% highlight bash linenos=table %}
+    sudo rm /etc/resolv.conf
+    sudo mv /etc/resolv.conf.old /etc/resolv.conf
+{% endhighlight %}
