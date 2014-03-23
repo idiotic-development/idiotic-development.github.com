@@ -1,6 +1,6 @@
 .highlight
 {
-	background-color: #fff;
+	background-color: transparent;
 	width: 100%;
 }
 
@@ -142,7 +142,7 @@ hr
 	width: 75%;
 	height: 2px;
 	position: relative;
-	right: 50px;
+	right: 49px;
 	float: left;
 }
 
@@ -185,7 +185,7 @@ hr:before
 	width: calc(70% - 42px);
 	width: -moz-calc(70% - 42px);
 	width: -webkit-calc(70% - 42px);
-	padding: 100px 0 0 50px;
+	padding: 100px 0 50px 50px;
 	margin-left: 23%;
 }
 
