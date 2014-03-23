@@ -13,7 +13,7 @@ I recently came into possession of an ASUS 1225b netbook with Windows 7 installe
 
 Easy, right? Not so fast. I reboot and am presented with those horrid spinning balls of color that is the Windows boot screen. What happened, why have the gods of grub forsaken me?
 
-### Booting Fedora
+## Booting Fedora
 My First thought is, of course, install grub manually. So I plug the usb back in and choose to run live. At this point I run into my fist major hiccup, the mouse and keyboard don't work on 13.10 live. Well there are other live distributions out there.
 
 A quick download and install later and I'm booting to Fedora 20 live ... only to have it hang. In vain I Google hoping to feed on the mistakes of those who have come before me, but none came to my rescue. As a last ditch effort, I decide to make a new usb with `dd` instead of UUI. The system barely fit on my usb so just maybe that created the issue. Only problem is that I do not have a linux installation. Our old friend Google spit out [dd for Windows](http://www.chrysocome.net/dd), copy that to `system32` and we're in business.
@@ -27,7 +27,7 @@ A quick download and install later and I'm booting to Fedora 20 live ... only to
     
 Plug in the new usb stick and it boots!
 
-### Reinstalling grub
+## Reinstalling grub
 Since we have a (presumably) working system installed, the easiest way to install grub is to `chroot` into Ubuntu and install from there.
 
 {% highlight bash linenos=table %}
@@ -56,7 +56,7 @@ Now to purge and reinstall grub.
     
 Everything looks successful. I cross my finders, reboot ... and I'm back to the Windows login screen. No no no, Where did I go wrong!
 
-### The fix
+## The fix
 I do some more Googling. I bump my head against the desk a few times. I comb through the BIOS looking for anything that would bypass grub. I ... wait, there it is! I have two boot options:
 
 - primary harddisk 
