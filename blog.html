@@ -8,7 +8,7 @@ title: Blog
 		<h2>{{ post.title }}</h2>
 		<span style="position: relative; top: 5px">
 			<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
-			<span class="tags">{{ post.tags }}</span>
+			<span class="tags">{{ post.tags | array_to_sentence_string }}</span>
 			by {{ post.author }}
 		</span>
 		<p>{{ post.excerpt | strip_html }}</p>

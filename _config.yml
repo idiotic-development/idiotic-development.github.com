@@ -2,6 +2,9 @@ name: Idiotic Design and Development
 description: Living one mistake at a time.
 url: http://idiotic-development.github.io
 timezone: America/Los_Angeles
+excerpt_separator: '#'
+highlighter: pygments
+pygments: true
 markdown: kramdown
 kramdown:
   input: GFM
