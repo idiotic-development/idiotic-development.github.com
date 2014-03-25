@@ -1,5 +1,100 @@
----
-layout: default
-title: Development
----
-<p>We have several projects in the works but none are ready to be released. Sorry.</p>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Development</title>
+	<link rel="alternate" type="application/rss+xml" title="Idiotic Design and Development" href="http://idiotic-development.github.io/feed.xml">
+	<link rel="stylesheet" type="text/css" href="/style/pygments/solarized-light.css">
+	<link rel="stylesheet" type="text/css" href="/style/main.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="/style/jquery.cookie.js"></script>
+<script type="text/javascript">
+	$(document).ready (function ()
+	{
+		if (parseInt($("body").css ("width")) < 1000)
+			$("#sidebar, #content").addClass ("topdown");
+
+		if ($.cookie('theme') == 'black')
+			$(document.createElement("link"))
+				.attr ("rel", "stylesheet")
+				.attr("type", "text/css")
+				.attr ("href", "/style/black.css")
+				.appendTo ("head");
+
+		$("#white").click (function ()
+		{
+			$("link[href='/style/black.css']").remove ();
+			$.cookie('theme', 'white');
+		});
+		$("#black").click (function ()
+		{
+			$(document.createElement("link"))
+				.attr ("rel", "stylesheet")
+				.attr("type", "text/css")
+				.attr ("href", "/style/black.css")
+				.appendTo ("head");
+			$.cookie('theme', 'black');
+		});
+	});
+</script>
+	<style type="text/css">
+		#black, #white
+		{
+			background-color: #2d3339;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+		}
+
+		#white
+		{
+			background-color: #ffffff;
+			right: 70px;
+		}
+	</style>
+</head>
+<body>
+ 	<div id="sidebar">
+		<a id="header" href="/"><img src="/style/idiotic.svg" alt="idiotic"></a>
+		<ul id="menu">
+	
+		
+			<li><a href="/development.html" id="current">Development</a></li>
+		
+	
+		
+			<li><a href="/design.html">Design</a></li>
+		
+	
+		
+	
+		
+	
+		
+			<li><a href="/about.html">About</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/blog.html">Blog</a></li>
+		
+	
+		
+	
+</ul>
+
+		<div id="black"></div>
+		<div id="white"></div>
+	</div>
+	<div id="content">
+		<h1>Development</h1>
+		<hr>
+		<br><br>
+		<p>We have several projects in the works but none are ready to be released. Sorry.</p>
+	</div>
+ </body>
+</html>

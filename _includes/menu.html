@@ -1,7 +1,0 @@
-<ul id="menu">
-	{% for a_page in site.pages %}
-		{% unless a_page.show == false %}
-			<li><a href="{{ a_page.url }}"{% if page.title == a_page.title %} id="current"{% endif %}>{{ a_page.title }}</a></li>
-		{% endunless %}
-	{% endfor %}
-</ul>

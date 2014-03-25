@@ -1,9 +1,100 @@
----
-layout: default
-title: Design
----
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Design</title>
+	<link rel="alternate" type="application/rss+xml" title="Idiotic Design and Development" href="http://idiotic-development.github.io/feed.xml">
+	<link rel="stylesheet" type="text/css" href="/style/pygments/solarized-light.css">
+	<link rel="stylesheet" type="text/css" href="/style/main.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="/style/jquery.cookie.js"></script>
+<script type="text/javascript">
+	$(document).ready (function ()
+	{
+		if (parseInt($("body").css ("width")) < 1000)
+			$("#sidebar, #content").addClass ("topdown");
 
-<p class="warning">WARNING: Content on this page is intended <i>only</i> for viewing perpuses. Do not use without direct permission.</p>
+		if ($.cookie('theme') == 'black')
+			$(document.createElement("link"))
+				.attr ("rel", "stylesheet")
+				.attr("type", "text/css")
+				.attr ("href", "/style/black.css")
+				.appendTo ("head");
+
+		$("#white").click (function ()
+		{
+			$("link[href='/style/black.css']").remove ();
+			$.cookie('theme', 'white');
+		});
+		$("#black").click (function ()
+		{
+			$(document.createElement("link"))
+				.attr ("rel", "stylesheet")
+				.attr("type", "text/css")
+				.attr ("href", "/style/black.css")
+				.appendTo ("head");
+			$.cookie('theme', 'black');
+		});
+	});
+</script>
+	<style type="text/css">
+		#black, #white
+		{
+			background-color: #2d3339;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+		}
+
+		#white
+		{
+			background-color: #ffffff;
+			right: 70px;
+		}
+	</style>
+</head>
+<body>
+ 	<div id="sidebar">
+		<a id="header" href="/"><img src="/style/idiotic.svg" alt="idiotic"></a>
+		<ul id="menu">
+	
+		
+			<li><a href="/development.html">Development</a></li>
+		
+	
+		
+			<li><a href="/design.html" id="current">Design</a></li>
+		
+	
+		
+	
+		
+	
+		
+			<li><a href="/about.html">About</a></li>
+		
+	
+		
+	
+		
+			<li><a href="/blog.html">Blog</a></li>
+		
+	
+		
+	
+</ul>
+
+		<div id="black"></div>
+		<div id="white"></div>
+	</div>
+	<div id="content">
+		<h1>Design</h1>
+		<hr>
+		<br><br>
+		<p class="warning">WARNING: Content on this page is intended <i>only</i> for viewing perpuses. Do not use without direct permission.</p>
 
 <h2 style="margin: 20px">Web</h2>
 
@@ -27,3 +118,6 @@ title: Design
 	<p>Another wallpaper. I Started with a picture I took of the dice deck of cards and watch. Then made the hat in blender and ran them both through photoshop.</p>
 </div>
 <br>
+	</div>
+ </body>
+</html>

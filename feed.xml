@@ -1,21 +1,104 @@
----
-show: false
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-	<title>{{ site.name | xml_escape }}</title>
-	<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>	
-	<link>{{ site.url }}</link>
-	<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-	{% for post in site.posts limit:10 %}
+	<title>Idiotic Design and Development</title>
+	<description>Living one mistake at a time.</description>	
+	<link>http://idiotic-development.github.io</link>
+	<atom:link href="http://idiotic-development.github.io/feed.xml" rel="self" type="application/rss+xml" />
+	
 	<item>
-		<title>{{ post.title | xml_escape }}</title>
-		<description>{{ post.content | xml_escape }}</description>
-		<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-		<link>{{ site.url }}{{ post.url }}</link>
-		<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+		<title>Battle For Installation</title>
+		<description>&lt;p&gt;I recently came into possession of an ASUS 1225b netbook with Windows 7 installed. It’s a little beat up (the hinge is a goner) but a lot better than the nothing I had before. So, first things first, install Ubuntu.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Download the torrent&lt;/li&gt;
+  &lt;li&gt;Grab a usb stick&lt;/li&gt;
+  &lt;li&gt;Use &lt;a href=&quot;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&quot; target=&quot;_blank&quot;&gt;UUI&lt;/a&gt; to make it live&lt;/li&gt;
+  &lt;li&gt;Change boot order&lt;/li&gt;
+  &lt;li&gt;Boot and install&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Easy, right? Not so fast. I reboot and am presented with those horrid spinning balls of color that is the Windows boot screen. What happened, why have the gods of grub forsaken me?&lt;/p&gt;
+
+&lt;h2 id=&quot;booting-fedora&quot;&gt;Booting Fedora&lt;/h2&gt;
+&lt;p&gt;My First thought is, of course, install grub manually. So I plug the usb back in and choose to run live. At this point I run into my fist major hiccup, the mouse and keyboard don’t work on 13.10 live. Well there are other live distributions out there.&lt;/p&gt;
+
+&lt;p&gt;A quick download and install later and I’m booting to Fedora 20 live … only to have it hang. In vain I Google hoping to feed on the mistakes of those who have come before me, but none came to my rescue. As a last ditch effort, I decide to make a new usb with &lt;code&gt;dd&lt;/code&gt; instead of UUI. The system barely fit on my usb so just maybe that created the issue. Only problem is that I do not have a linux installation. Our old friend Google spit out &lt;a href=&quot;http://www.chrysocome.net/dd&quot;&gt;dd for Windows&lt;/a&gt;, copy that to &lt;code&gt;system32&lt;/code&gt; and we’re in business.&lt;/p&gt;
+
+&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    dd &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;c:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\*&lt;/span&gt;**&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;ownloads&lt;span class=&quot;se&quot;&gt;\f&lt;/span&gt;edora.iso &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;.&lt;span class=&quot;se&quot;&gt;\f&lt;/span&gt;: 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Plug in the new usb stick and it boots!&lt;/p&gt;
+
+&lt;h2 id=&quot;reinstalling-grub&quot;&gt;Reinstalling grub&lt;/h2&gt;
+&lt;p&gt;Since we have a (presumably) working system installed, the easiest way to install grub is to &lt;code&gt;chroot&lt;/code&gt; into Ubuntu and install from there.&lt;/p&gt;
+
+&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    su -
+    mount /dev/sda6 /mnt
+    &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;i in /dev /dev/pts /proc /sys /run&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;mount --bind &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; /mnt&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+    
+    &lt;span class=&quot;c&quot;&gt;# For internet access&lt;/span&gt;
+    mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.old
+    cp /etc/resolv.conf /mnt/etc/resolv.conf
+    
+    chroot /mnt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Now to purge and reinstall grub.&lt;/p&gt;
+
+&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;1
+2
+3
+4
+5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    apt-get update
+    apt-get purge grub-common
+    apt-get install grub-pc
+    grub-install /dev/sda
+    update-grub
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Everything looks successful. I cross my finders, reboot … and I’m back to the Windows login screen. No no no, Where did I go wrong!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-fix&quot;&gt;The fix&lt;/h2&gt;
+&lt;p&gt;I do some more Googling. I bump my head against the desk a few times. I comb through the BIOS looking for anything that would bypass grub. I … wait, there it is! I have two boot options:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;primary harddisk &lt;/li&gt;
+  &lt;li&gt;UEFI: my usb&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I was booting the install medium as UEFI. I’m not using UEFI, I do not have a UEFI partition. This must be the problem. Under the boot priority selection there’s harddisk priority selection. Change that to my usb, save &amp;amp; reboot, repeat grub installation, reboot, and voilà!&lt;/p&gt;
+
+&lt;p&gt;The moral of the story? Check your boot options &lt;em&gt;before&lt;/em&gt; you install.&lt;/p&gt;
+
+&lt;h2 id=&quot;epilogue&quot;&gt;Epilogue&lt;/h2&gt;
+&lt;p&gt;One last thing, we have to move the resolve file back. I forgot and it took me way to long to realize why I could’t connect on some networks.&lt;/p&gt;
+
+&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;1
+2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    sudo rm /etc/resolv.conf
+    sudo mv /etc/resolv.conf.old /etc/resolv.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+</description>
+		<pubDate>Sat, 22 Mar 2014 00:00:00 -0700</pubDate>
+		<link>http://idiotic-development.github.io/2014/03/22/battle-for-installation.html</link>
+		<guid isPermaLink="true">http://idiotic-development.github.io/2014/03/22/battle-for-installation.html</guid>
 	</item>
-	{% endfor %}
+	
 </channel>
 </rss>
