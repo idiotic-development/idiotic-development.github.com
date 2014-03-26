@@ -7,34 +7,34 @@
 	<atom:link href="http://idiotic-development.github.io/feed.xml" rel="self" type="application/rss+xml" />
 	
 	<item>
-		<title>Battle For Installation</title>
-		<description>&lt;p&gt;I recently came into possession of an ASUS 1225b netbook with Windows 7 installed. It’s a little beat up (the hinge is a goner) but a lot better than the nothing I had before. So, first things first, install Ubuntu.&lt;/p&gt;
+		<title>Battle for Installation</title>
+		<description>&lt;p&gt;I recently came into possession of an &lt;span class=&quot;caps&quot;&gt;ASUS&lt;/span&gt; 1225b netbook with Windows 7 installed. It’s a little beat up (the hinge is a goner) but a lot better than the nothing I had before. So, first things first, install&amp;nbsp;Ubuntu.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Download the torrent&lt;/li&gt;
-  &lt;li&gt;Grab a usb stick&lt;/li&gt;
-  &lt;li&gt;Use &lt;a href=&quot;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&quot; target=&quot;_blank&quot;&gt;UUI&lt;/a&gt; to make it live&lt;/li&gt;
-  &lt;li&gt;Change boot order&lt;/li&gt;
-  &lt;li&gt;Boot and install&lt;/li&gt;
+  &lt;li&gt;Download the&amp;nbsp;torrent&lt;/li&gt;
+  &lt;li&gt;Grab a usb&amp;nbsp;stick&lt;/li&gt;
+  &lt;li&gt;Use &lt;a href=&quot;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&quot; target=&quot;_blank&quot;&gt;&lt;span class=&quot;caps&quot;&gt;UUI&lt;/span&gt;&lt;/a&gt; to make it&amp;nbsp;live&lt;/li&gt;
+  &lt;li&gt;Change boot&amp;nbsp;order&lt;/li&gt;
+  &lt;li&gt;Boot and&amp;nbsp;install&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Easy, right? Not so fast. I reboot and am presented with those horrid spinning balls of color that is the Windows boot screen. What happened, why have the gods of grub forsaken me?&lt;/p&gt;
+&lt;p&gt;Easy, right? Not so fast. I reboot and am presented with those horrid spinning balls of color that is the Windows boot screen. What happened, why have the gods of grub forsaken&amp;nbsp;me?&lt;/p&gt;
 
-&lt;h2 id=&quot;booting-fedora&quot;&gt;Booting Fedora&lt;/h2&gt;
-&lt;p&gt;My First thought is, of course, install grub manually. So I plug the usb back in and choose to run live. At this point I run into my fist major hiccup, the mouse and keyboard don’t work on 13.10 live. Well there are other live distributions out there.&lt;/p&gt;
+&lt;h2 id=&quot;booting-fedora&quot;&gt;Booting&amp;nbsp;Fedora&lt;/h2&gt;
+&lt;p&gt;My First thought is, of course, install grub manually. So I plug the usb back in and choose to run live. At this point I run into my fist major hiccup, the mouse and keyboard don’t work on &lt;span class=&quot;caps&quot;&gt;13.10&lt;/span&gt; live. Well there are other live distributions out&amp;nbsp;there.&lt;/p&gt;
 
-&lt;p&gt;A quick download and install later and I’m booting to Fedora 20 live … only to have it hang. In vain I Google hoping to feed on the mistakes of those who have come before me, but none came to my rescue. As a last ditch effort, I decide to make a new usb with &lt;code&gt;dd&lt;/code&gt; instead of UUI. The system barely fit on my usb so just maybe that created the issue. Only problem is that I do not have a linux installation. Our old friend Google spit out &lt;a href=&quot;http://www.chrysocome.net/dd&quot;&gt;dd for Windows&lt;/a&gt;, copy that to &lt;code&gt;system32&lt;/code&gt; and we’re in business.&lt;/p&gt;
+&lt;p&gt;A quick download and install later and I’m booting to Fedora 20 live … only to have it hang. In vain I Google hoping to feed on the mistakes of those who have come before me, but none came to my rescue. As a last ditch effort, I decide to make a new usb with &lt;code&gt;dd&lt;/code&gt; instead of &lt;span class=&quot;caps&quot;&gt;UUI.&lt;/span&gt; The system barely fit on my usb so just maybe that created the issue. Only problem is that I do not have a linux installation. Our old friend Google spit out &lt;a href=&quot;http://www.chrysocome.net/dd&quot;&gt;dd for Windows&lt;/a&gt;, copy that to &lt;code&gt;system32&lt;/code&gt; and we’re in&amp;nbsp;business.&lt;/p&gt;
 
-&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    dd &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;c:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\*&lt;/span&gt;**&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;ownloads&lt;span class=&quot;se&quot;&gt;\f&lt;/span&gt;edora.iso &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;.&lt;span class=&quot;se&quot;&gt;\f&lt;/span&gt;: 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;dd &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;c:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\*&lt;/span&gt;**&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;ownloads&lt;span class=&quot;se&quot;&gt;\f&lt;/span&gt;edora.iso &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;.&lt;span class=&quot;se&quot;&gt;\f&lt;/span&gt;: 
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Plug in the new usb stick and it boots!&lt;/p&gt;
+&lt;p&gt;Plug in the new usb stick and it&amp;nbsp;boots!&lt;/p&gt;
 
-&lt;h2 id=&quot;reinstalling-grub&quot;&gt;Reinstalling grub&lt;/h2&gt;
-&lt;p&gt;Since we have a (presumably) working system installed, the easiest way to install grub is to &lt;code&gt;chroot&lt;/code&gt; into Ubuntu and install from there.&lt;/p&gt;
+&lt;h2 id=&quot;reinstalling-grub&quot;&gt;Reinstalling&amp;nbsp;grub&lt;/h2&gt;
+&lt;p&gt;Since we have a (presumably) working system installed, the easiest way to install grub is to &lt;code&gt;chroot&lt;/code&gt; into Ubuntu and install from&amp;nbsp;there.&lt;/p&gt;
 
-&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt; 1
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt; 1
  2
  3
  4
@@ -44,56 +44,56 @@
  8
  9
 10
-11&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    su -
-    mount /dev/sda6 /mnt
-    &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;i in /dev /dev/pts /proc /sys /run&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;mount --bind &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; /mnt&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# For internet access&lt;/span&gt;
-    mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.old
-    cp /etc/resolv.conf /mnt/etc/resolv.conf
-    
-    chroot /mnt
+11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;su -
+mount /dev/sda6 /mnt
+&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;i in /dev /dev/pts /proc /sys /run&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;    &lt;/span&gt;mount --bind &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; /mnt&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# For internet access&lt;/span&gt;
+mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.old
+cp /etc/resolv.conf /mnt/etc/resolv.conf
+
+chroot /mnt
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Now to purge and reinstall grub.&lt;/p&gt;
+&lt;p&gt;Now to purge and reinstall&amp;nbsp;grub.&lt;/p&gt;
 
-&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;1
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;1
 2
 3
 4
-5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    apt-get update
-    apt-get purge grub-common
-    apt-get install grub-pc
-    grub-install /dev/sda
-    update-grub
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;apt-get update
+apt-get purge grub-common
+apt-get install grub-pc
+grub-install /dev/sda
+update-grub
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Everything looks successful. I cross my finders, reboot … and I’m back to the Windows login screen. No no no, Where did I go wrong!&lt;/p&gt;
+&lt;p&gt;Everything looks successful. I cross my finders, reboot … and I’m back to the Windows login screen. No no no, Where did I go&amp;nbsp;wrong!&lt;/p&gt;
 
-&lt;h2 id=&quot;the-fix&quot;&gt;The fix&lt;/h2&gt;
-&lt;p&gt;I do some more Googling. I bump my head against the desk a few times. I comb through the BIOS looking for anything that would bypass grub. I … wait, there it is! I have two boot options:&lt;/p&gt;
+&lt;h2 id=&quot;the-fix&quot;&gt;The&amp;nbsp;fix&lt;/h2&gt;
+&lt;p&gt;I do some more Googling. I bump my head against the desk a few times. I comb through the &lt;span class=&quot;caps&quot;&gt;BIOS&lt;/span&gt; looking for anything that would bypass grub. I … wait, there it is! I have two boot&amp;nbsp;options:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;primary harddisk &lt;/li&gt;
-  &lt;li&gt;UEFI: my usb&lt;/li&gt;
+  &lt;li&gt;primary&amp;nbsp;harddisk &lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;caps&quot;&gt;UEFI&lt;/span&gt;: my&amp;nbsp;usb&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I was booting the install medium as UEFI. I’m not using UEFI, I do not have a UEFI partition. This must be the problem. Under the boot priority selection there’s harddisk priority selection. Change that to my usb, save &amp;amp; reboot, repeat grub installation, reboot, and voilà!&lt;/p&gt;
+&lt;p&gt;I was booting the install medium as &lt;span class=&quot;caps&quot;&gt;UEFI.&lt;/span&gt; I’m not using &lt;span class=&quot;caps&quot;&gt;UEFI&lt;/span&gt;, I do not have a &lt;span class=&quot;caps&quot;&gt;UEFI&lt;/span&gt; partition. This must be the problem. Under the boot priority selection there’s harddisk priority selection. Change that to my usb, save &lt;span class=&quot;amp&quot;&gt;&amp;amp;&lt;/span&gt; reboot, repeat grub installation, reboot, and&amp;nbsp;voilà!&lt;/p&gt;
 
-&lt;p&gt;The moral of the story? Check your boot options &lt;em&gt;before&lt;/em&gt; you install.&lt;/p&gt;
+&lt;p&gt;The moral of the story? Check your boot options &lt;em&gt;before&lt;/em&gt; you&amp;nbsp;install.&lt;/p&gt;
 
 &lt;h2 id=&quot;epilogue&quot;&gt;Epilogue&lt;/h2&gt;
-&lt;p&gt;One last thing, we have to move the resolve file back. I forgot and it took me way to long to realize why I could’t connect on some networks.&lt;/p&gt;
+&lt;p&gt;One last thing, we have to move the resolve file back. I forgot and it took me way to long to realize why I could’t connect on some&amp;nbsp;networks.&lt;/p&gt;
 
-&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;1
-2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    sudo rm /etc/resolv.conf
-    sudo mv /etc/resolv.conf.old /etc/resolv.conf
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;sudo rm /etc/resolv.conf
+sudo mv /etc/resolv.conf.old /etc/resolv.conf
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
 </description>
 		<pubDate>Sat, 22 Mar 2014 00:00:00 -0700</pubDate>
 		<link>http://idiotic-development.github.io/2014/03/22/battle-for-installation.html</link>
