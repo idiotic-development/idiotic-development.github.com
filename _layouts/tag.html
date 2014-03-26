@@ -1,0 +1,17 @@
+---
+layout: archive
+show: false
+---
+{% for post in site.tags[page.tag] %}
+<a href="{{ post.url }}">
+	<div class="post">
+		<h2>{{ post.title }}</h2>
+		<span style="position: relative; top: 5px">
+			<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+			<span class="tags">{{ post.tags | array_to_sentence_string }}</span>
+			by {{ post.author }}
+		</span>
+		<p>{{ post.excerpt | markdownify | strip_html | newline_to_br }}</p>
+	</div>
+</a>
+{% endfor %}
