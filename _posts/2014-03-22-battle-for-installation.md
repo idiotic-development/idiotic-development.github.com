@@ -18,41 +18,38 @@ My First thought is, of course, install grub manually. So I plug the usb back in
 
 A quick download and install later and I'm booting to Fedora 20 live ... only to have it hang. In vain I Google hoping to feed on the mistakes of those who have come before me, but none came to my rescue. As a last ditch effort, I decide to make a new usb with `dd` instead of UUI. The system barely fit on my usb so just maybe that created the issue. Only problem is that I do not have a linux installation. Our old friend Google spit out [dd for Windows](http://www.chrysocome.net/dd), copy that to `system32` and we're in business.
 
-{% highlight bash linenos=table %}
-    dd if=c:\Users\***\Downloads\fedora.iso of=\\.\f: 
-{% endhighlight %}
-
-
-
-    
+~~~ bash
+dd if=c:\Users\***\Downloads\fedora.iso of=\\.\f: 
+~~~
+ 
 Plug in the new usb stick and it boots!
 
 ## Reinstalling grub
 Since we have a (presumably) working system installed, the easiest way to install grub is to `chroot` into Ubuntu and install from there.
 
-{% highlight bash linenos=table %}
-    su -
-    mount /dev/sda6 /mnt
-    for i in /dev /dev/pts /proc /sys /run; do
-        mount --bind $i /mnt$i
-    done
-    
-    # For internet access
-    mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.old
-    cp /etc/resolv.conf /mnt/etc/resolv.conf
-    
-    chroot /mnt
-{% endhighlight %}
+~~~ bash
+su -
+mount /dev/sda6 /mnt
+for i in /dev /dev/pts /proc /sys /run; do
+    mount --bind $i /mnt$i
+done
+
+# For internet access
+mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.old
+cp /etc/resolv.conf /mnt/etc/resolv.conf
+
+chroot /mnt
+~~~
 
 Now to purge and reinstall grub.
 
-{% highlight bash linenos=table %}
-    apt-get update
-    apt-get purge grub-common
-    apt-get install grub-pc
-    grub-install /dev/sda
-    update-grub
-{% endhighlight %}
+~~~ bash
+apt-get update
+apt-get purge grub-common
+apt-get install grub-pc
+grub-install /dev/sda
+update-grub
+~~~
     
 Everything looks successful. I cross my finders, reboot ... and I'm back to the Windows login screen. No no no, Where did I go wrong!
 
@@ -69,7 +66,7 @@ The moral of the story? Check your boot options *before* you install.
 ## Epilogue
 One last thing, we have to move the resolve file back. I forgot and it took me way to long to realize why I could't connect on some networks.
 
-{% highlight bash linenos=table %}
-    sudo rm /etc/resolv.conf
-    sudo mv /etc/resolv.conf.old /etc/resolv.conf
-{% endhighlight %}
+~~~ bash
+sudo rm /etc/resolv.conf
+sudo mv /etc/resolv.conf.old /etc/resolv.conf
+~~~

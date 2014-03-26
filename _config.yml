@@ -6,5 +6,6 @@ excerpt_separator: '#'
 highlighter: pygments
 pygments: true
 markdown: kramdown
+markdown_ext: foo
 kramdown:
   input: GFM
