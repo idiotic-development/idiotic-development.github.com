@@ -47,6 +47,7 @@ body
 	color: #111111;
 	background-color: #ffffff;
 	font-family: OpenSans, sans-serif;
+	font-size: 1.2vw;
 	margin: 0;
 }
 
@@ -78,7 +79,7 @@ h1, h2, h3, h4, h5, h6
 
 h1
 {
-	font-size: 56px;
+	font-size: 5vw;
 }
 
 h3 a
@@ -317,4 +318,15 @@ ul#menu
 {
 	width: auto;
 	margin-left: 0;
+	font-size: 5vw;
+}
+
+#content.topdown h1
+{
+	font-size: 10vw;
+}
+
+#content.topdown header
+{
+	font-size: 3vw;
 }
