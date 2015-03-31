@@ -3,31 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Idiotic Design and Development</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="/style/jquery.cookie.js"></script>
-	<script type="text/javascript">
-		$(document).ready (function ()
-		{
-			if ($.cookie('theme') == 'black')
-			{
-				$("body").css ("background-color", "#2d3339");
-				$("a").css ("color", "#ffffff");
-			}
-
-			$("#white").click (function ()
-			{
-				$("body").css ("background-color", "#ffffff");
-				$("a").css ("color", "#555555");
-				$.cookie('theme', 'white');
-			});
-			$("#black").click (function ()
-			{
-				$("body").css ("background-color", "#2d3339");
-				$("a").css ("color", "#ffffff");
-				$.cookie('theme', 'black');
-			});
-		});
-	</script>
 	<style type="text/css">
 		html, body
 		{
@@ -92,35 +67,15 @@
 		{
 			letter-spacing: 4px;
 		}
-
-		#black, #white
-		{
-			background-color: #2d3339;
-			width: 50px;
-			height: 50px;
-			display: inline-block;
-			position: absolute;
-			left: 5px;
-			top: 10px;
-		}
-
-		#white
-		{
-			background-color: #ffffff;
-			left: 65px;
-		}
 </style>
 </head>
 <body>
-	<div id="black"></div>
-	<div id="white"></div>
 	<div id="header"></div>
 	<ul id="menu">
 	
-				<li><a href="/development.html">Development</a></li>
-				<li><a href="/design.html">Design</a></li>
 				<li><a href="/about.html">About</a></li>
-				<li><a href="/blog.html">Blog</a></li>
+				<li><a href="/design.html">Design</a></li>
+				<li><a href="/development.html">Development</a></li>
 	
 </ul>
 
