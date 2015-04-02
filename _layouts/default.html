@@ -5,9 +5,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>{{ page.title | titlecase }}</title>
-	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 	<link rel="stylesheet" type="text/css" href="/style/pygments/solarized-light.css">
 	<link rel="stylesheet" type="text/css" href="/style/main.css">
+	{{ page.head }}
 </head>
 <body>
  	<div id="sidebar">
@@ -15,10 +15,10 @@
 		{% include menu.html %}
 	</div>
 	<div id="content">
-		<h1>{{ page.title }}</h1>
+<!-- 		<h1>{{ page.title }}</h1>
 		<hr>
 		<br><br>
-		{{ content }}
+ -->		{{ content }}
 	</div>
  </body>
 </html>
