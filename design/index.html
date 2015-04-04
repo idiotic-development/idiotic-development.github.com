@@ -12,13 +12,13 @@ title: Design
 			{name: "The Lines", url: "lines.html", desc: "Not much to say for this one. Abstract desktop wallpaper I made using Photoshop."},
 			{name: "Hat Scene", url: "hat.html", desc: "The result of some Photoshop experimentation. Started with a photo I took and played around with it. The hat was not in the original photo."}];
 
-		pos = 0;
+		pos = -1;
 		function next ()
 		{
+			pos = (pos < pages.length-1) ? pos+1 : 0;
 			$("iframe").attr ("src", pages[pos].url);
 			$("#desc h2").text (pages[pos].name);
 			$("#desc p").text (pages[pos].desc);
-			pos = (pos < pages.length-1) ? pos+1 : 0;
 		}
 
 		$(window).ready (
@@ -26,10 +26,15 @@ title: Design
 			{
 				next ();
 
-				$("#desc a").click (function (e)
+				$("#gt").click (function (e)
 				{
 					next ();
 					e.preventDefault();
+				});
+
+				$("#x").click (function (e)
+				{
+					window.location.href = pages[pos].url;
 				});
 
 				// Work around for font load times causing transition to activate during animation.
@@ -103,22 +108,51 @@ title: Design
 
 		#desc p
 		{
-			margin: 0.5vw;
+			margin: 0.5vw 2.5vw 0.5vw 0.5vw;
 			color: #111111;
 		}
 
-		#desc a
+		#gt
 		{
 			font-size: 1.5vw;
-			margin: 2vw 3vw;
-			float: right;
+			display: block;
+			width: 2vw;
+			position: absolute;
+			top: 3vw;
+			right: 0;
+			height: calc(100% - 3vw);
+			margin: 0;
+			padding: 0;
+			text-align: center;
 		}
 
-		#desc a:after
+		#gt:after
 		{
-			content: "\f061";
+			content: "\f054";
 			font-family: FontAwesome;
-			margin: 5px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+		}
+
+		#x
+		{
+			font-family: FontAwesome;
+			font-size: 1.4vw;
+			display: block;
+			width: 2vw;
+			position: absolute;
+			top: 0.5vw;
+			right: 0;
+			margin: 0;
+			padding: 0.3vw 0;
+			text-align: center;
+		}
+
+		.button
+		{
+			background-color: #ffffff;
 		}
 
 		iframe
@@ -138,7 +172,8 @@ title: Design
 	<div id="desc">
 		<h2></h2>
 		<p></p>
-		<a>Next</a>
+		<a id="x" class="button">&#xf057;</a>
+		<a id="gt" class="button"></a>
 	</div>
 	<iframe scrolling="no" seamless="true"></iframe>
 </body>
