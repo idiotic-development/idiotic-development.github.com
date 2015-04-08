@@ -5,7 +5,8 @@
 	<title>Design</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 	<script type="text/javascript">
-		pages = [{name: "Cross Roads", url: "crossroads/index.html", desc: "This was a rather script heavy project. The background slide show was done with jQuery. With the increased browser support for css3 animations, if I made this today I would implement the slide show using them instead.  The 'Events' list pulled upcoming events from Google Calendar, while a separate page embed the entire calendar using a custom script."},
+		pages = [{name: "White House", url: "http://whitehouse.idioticdev.com", desc: "The web site for my interactive fiction mapper, white house. This site is targeted to a very specific audience: players of interactive fiction. The site is implemented as a simple interactive fiction game.<br><br>Some things you can do. <ul><li><b>View screenshots</b><br>use the command 'examine photos'.</li><li><b>Download</b><br>First go 'south', then ether 'get stone' or 'get rock'.</li></ul>"},
+			{name: "Cross Roads", url: "crossroads/index.html", desc: "This was a rather script heavy project. The background slide show was done with jQuery. With the increased browser support for css3 animations, if I made this today I would implement the slide show using them instead.  The 'Events' list pulled upcoming events from Google Calendar, while a separate page embed the entire calendar using a custom script."},
 			{name: "The Lines", url: "lines.html", desc: "Not much to say for this one. Abstract desktop wallpaper I made using Photoshop."},
 			{name: "Hat Scene", url: "hat.html", desc: "The result of some Photoshop experimentation. Started with a photo I took and played around with it. The hat was not in the original photo."}];
 
@@ -15,7 +16,7 @@
 			pos = (pos < pages.length-1) ? pos+1 : 0;
 			$("iframe").attr ("src", pages[pos].url);
 			$("#desc h2").text (pages[pos].name);
-			$("#desc p").text (pages[pos].desc);
+			$("#desc p").html (pages[pos].desc);
 		}
 
 		$(window).ready (
@@ -93,6 +94,7 @@
 			position: fixed;
 			overflow: auto;
 			padding: 1vw;
+			border: 1px solid #F5F5F5;
 
 			right: -20%;
 			animation: slide-right 2s ease-out;
