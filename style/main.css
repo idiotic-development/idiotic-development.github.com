@@ -1,3 +1,6 @@
+---
+show: false
+---
 .highlight
 {
 	background-color: transparent;
@@ -175,9 +178,6 @@ hr:after, hr:before
 	top: 6px;
 
 	transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
 }
 
 hr:before
@@ -185,9 +185,6 @@ hr:before
 	top: -7px;
 
 	transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
 }
 
 #header img
@@ -249,9 +246,6 @@ ul#menu
 	display: block;
 
 	transition: all 1s;
-	-ms-transition: all 1s;
-	-moz-transition: all 1s;
-	-webkit-transition: all 1s;
 }
 
 #menu a:hover
