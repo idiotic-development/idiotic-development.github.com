@@ -7,7 +7,7 @@
 
 .code
 {
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;	-ms-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;	-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;
 }
 
 .highlighttable
@@ -15,7 +15,7 @@
 	border: 1px solid #DEDEDE;
 	width: 100%;
 	border-spacing: 0;
-	border-radius: 10px;
+	border-radius: 10px;	-ms-border-radius: 10px;	-moz-border-radius: 10px;	-webkit-border-radius: 10px;
 }
 
 .linenos
@@ -23,12 +23,12 @@
 	color: #aaaaaa;
 	background-color: #f2f2f2;
 	border-right: 1px solid #e0e0e0;
-	box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;
+	box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;	-ms-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;	-moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;	-webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;
 	text-align: right;
 	padding-right: 10px;
 	width: 35px;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;	-ms-border-top-left-radius: 10px;	-moz-border-top-left-radius: 10px;	-webkit-border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;	-ms-border-bottom-left-radius: 10px;	-moz-border-bottom-left-radius: 10px;	-webkit-border-bottom-left-radius: 10px;
 	padding-bottom: 12px;
 }
 
@@ -174,20 +174,14 @@ hr:after, hr:before
 	right: -5px;
 	top: 6px;
 
-	transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);	-ms-transform: rotate(-45deg);	-moz-transform: rotate(-45deg);	-webkit-transform: rotate(-45deg);
 }
 
 hr:before
 {
 	top: -7px;
 
-	transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);	-ms-transform: rotate(45deg);	-moz-transform: rotate(45deg);	-webkit-transform: rotate(45deg);
 }
 
 #header img
@@ -248,10 +242,7 @@ ul#menu
 	padding: 10px;
 	display: block;
 
-	transition: all 1s;
-	-ms-transition: all 1s;
-	-moz-transition: all 1s;
-	-webkit-transition: all 1s;
+	transition: all 1s;	-ms-transition: all 1s;	-moz-transition: all 1s;	-webkit-transition: all 1s;
 }
 
 #menu a:hover
