@@ -5,20 +5,65 @@
 <head>
 	<meta charset="utf-8">
 	<title>{{ page.title | titlecase }}</title>
-	<link rel="stylesheet" type="text/css" href="/style/pygments/solarized-light.css">
-	<link rel="stylesheet" type="text/css" href="/style/main.css">
-	{{ page.head }}
+	<link rel="stylesheet" href="/style/main.css">
+	<link rel="stylesheet" href="/style/transitions.css">
+	<link rel="shortcut icon" href="/favicon.png">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+	<script src="/style/modernizr.js"></script>
+	<script src="/style/main.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-78410117-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	{{ page.head | liquify }}
+	{{ layout.head | liquify }}
 </head>
-<body>
- 	<div id="sidebar">
-		<a id="header" href="/"><img src="/style/idiotic.svg" alt="idiotic"></a>
-		{% include menu.html %}
+<body{% unless layout.class == nil %} class="{{ layout.class }}"{% endunless %}
+{% unless page.class == nil %} class="{{ page.class }}"{% endunless %}>
+	<div id="header">
+		<header><a href="/"><img src="/style/idiotic.svg" alt="idiotic"></a></header>
+		<nav>
+			<span></span>
+			<ul>
+				{% strip %}
+					{% if page.selected != nil %}
+						{% assign selected = page.selected %}
+					{% elsif layout.selected != nil %}
+						{% assign selected = layout.selected %}
+					{% else %}
+						{% assign selected = page.url %}
+					{% endif %}
+
+					{% assign pages = site.pages | sort: 'menu' %}
+					{% for a_page in pages %}
+						<!-- {% unless a_page.menu == nil %} -->
+						<li{% if a_page.url == selected %} class="selected"{% endif %}>
+							<a href="{{ a_page.url }}">{{ a_page.title | titlecase }}</a>
+						</li>
+						<!-- {% endunless %} -->
+					{% endfor %}
+					<li{% if site.posts.first.url == selected %} class="selected"{% endif %}>
+						<a href="{{ site.posts.first.url }}">Ramblings</a>
+					</li>
+				{% endstrip %}
+			</ul>
+		</nav>
 	</div>
-	<div id="content">
-<!-- 		<h1>{{ page.title }}</h1>
-		<hr>
-		<br><br>
- -->		{{ content }}
+	<main>
+		{{ content }}
+	</main>
+	<div id="links">
+		<a target="_blank" href="https://github.com/idiotic-development/idiotic-development.github.com">
+			<img src="/style/github.svg" alt="github">
+		</a>
+		<a href="mailto:timothy@idioticdev.com">
+			<img src="/style/mail.svg" alt="email">
+		</a>
 	</div>
- </body>
+</body>
 </html>

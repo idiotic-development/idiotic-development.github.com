@@ -1,5 +1,4 @@
-# Replaces multiple newlines and whitespace 
-# between them with one newline
+# Replaces multiple newlines and whitespace between them with one newline
 
 module Jekyll
   class StripTag < Liquid::Block

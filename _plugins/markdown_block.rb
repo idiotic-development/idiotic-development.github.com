@@ -13,7 +13,8 @@ module Jekyll
     require "kramdown"
     def render(context)
       content = super
-      "#{Kramdown::Document.new(content).to_html}"
+      # Kramdown::Document.new(content, Jekyll::Utils.symbolize_hash_keys(@config['kramdown'])).to_html5
+      Kramdown::Document.new(content).to_html5
     end
   end
 end
