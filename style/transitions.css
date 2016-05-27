@@ -1,0 +1,151 @@
+.transitionOut {
+  animation: 0.5s both fadeOut;
+}
+.transitionIn {
+  animation: 1s both fadeIn;
+}
+.screenIn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #fff;
+  animation: 0.5s fadeIn both;
+}
+.screenOut {
+  animation: 1s fadeOut both;
+}
+.index header img {
+  animation: 2s 0.5s fadeIn both;
+}
+.index nav ul {
+  animation: 1s 1s fadeIn both;
+}
+.projects .transitionIn {
+  animation: none;
+}
+.projects .transitionIn a:nth-child(1) {
+  animation: 1s itemEnter both;
+}
+.projects .transitionIn a:nth-child(2) {
+  animation: 1s 0.2s itemEnter both;
+}
+@-moz-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes itemEnter {
+  from {
+    opacity: 0;
+    left: 5px;
+  }
+  50% {
+    left: 0;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@-webkit-keyframes itemEnter {
+  from {
+    opacity: 0;
+    left: 5px;
+  }
+  50% {
+    left: 0;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@-o-keyframes itemEnter {
+  from {
+    opacity: 0;
+    left: 5px;
+  }
+  50% {
+    left: 0;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes itemEnter {
+  from {
+    opacity: 0;
+    left: 5px;
+  }
+  50% {
+    left: 0;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+

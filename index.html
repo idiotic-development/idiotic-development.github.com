@@ -1,84 +1,71 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Idiotic Design and Development</title>
-	<style type="text/css">
-		html, body
-		{
-			height: 100%;
-		}
+	<title>Home</title>
+	<link rel="stylesheet" href="/style/main.css">
+	<link rel="stylesheet" href="/style/transitions.css">
+	<link rel="shortcut icon" href="/favicon.png">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+	<script src="/style/modernizr.js"></script>
+	<script src="/style/main.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		body
-		{
-			color: #666666;
-			background-color: #f5f5f5;
-			font-family: open_sanslight, sans-serif;
-			padding: 0;
-			margin: 0;
-		}
-
-		@font-face {
-			font-family: 'open_sanslight';
-			src: url('/style/openserif-webfont.eot');
-			src: url('/style/openserif-webfont.eot?#iefix') format('embedded-opentype'),
-				 url('/style/openserif-webfont.woff') format('woff'),
-				 url('/style/openserif-webfont.ttf') format('truetype'),
-				 url('/style/openserif-webfont.svg#open_sanslight') format('svg');
-			font-weight: normal;
-			font-style: normal;
-		}
-
-
-		#header
-		{
-			background: #005EB9 url("/style/idiotic-text.svg") no-repeat center bottom;
-			width: 100%;
-			height: 65%;
-		}
-
-		#menu
-		{
-			text-align: center;
-		}
-
-		#menu li
-		{
-			text-align: left;
-			list-style: none;
-			display: inline-block;
-		}
-
-		#menu a
-		{
-			color: #555555;
-			font-size: 28px;
-			text-decoration: none;
-			letter-spacing: 0;
-			width: 200px;
-			padding-left: 5px;
-			margin: 20px;
-			display: block;
-			
-			transition: all 1s;			-ms-transition: all 1s;			-moz-transition: all 1s;			-webkit-transition: all 1s;
-		}
-
-		#menu a:hover
-		{
-			letter-spacing: 4px;
-		}
-</style>
+		ga('create', 'UA-78410117-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	
+	
 </head>
-<body>
-	<div id="header"></div>
-	<ul id="menu">
-	
-				<li><a href="/about.html">About</a></li>
-				<li><a href="/design/index.html">Design</a></li>
-				<li><a href="/development/index.html">Development</a></li>
-				<li><a href="/contact.html">Contact</a></li>
-	
-</ul>
-
+<body
+ class="index">
+	<div id="header">
+		<header><a href="/"><img src="/style/idiotic.svg" alt="idiotic"></a></header>
+		<nav>
+			<span></span>
+			<ul>
+				
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<li>
+							<a href="/about/">Who am I?</a>
+						</li>
+						<!--  -->
+						<!--  -->
+						<li>
+							<a href="/portfolio/">Examples of my work</a>
+						</li>
+						<!--  -->
+						<!--  -->
+						<li>
+							<a href="/projects/">Things I've made</a>
+						</li>
+						<!--  -->
+					<li>
+						<a href="/2016/05/21/atom/">Ramblings</a>
+					</li>
+				
+			</ul>
+		</nav>
+	</div>
+	<main>
+		
+	</main>
+	<div id="links">
+		<a target="_blank" href="https://github.com/idiotic-development/idiotic-development.github.com">
+			<img src="/style/github.svg" alt="github">
+		</a>
+		<a href="mailto:timothy@idioticdev.com">
+			<img src="/style/mail.svg" alt="email">
+		</a>
+	</div>
 </body>
 </html>

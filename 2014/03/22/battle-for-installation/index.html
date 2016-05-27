@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Battle For Installation</title>
+	<link rel="stylesheet" href="/style/main.css">
+	<link rel="stylesheet" href="/style/transitions.css">
+	<link rel="shortcut icon" href="/favicon.png">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+	<script src="/style/modernizr.js"></script>
+	<script src="/style/main.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-78410117-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	
+	<link rel="stylesheet" href="/style/autumn.css">
+<meta name="author" content="Timothy Johnson">
+<link rel="canonical" href="/2014/03/22/battle-for-installation/">
+<link rel="author" href="http://idioticdev.com/about/" title="Timothy Johnson">
+<link rel="home" href="http://idioticdev.com" title="Idiotic">
+
+</head>
+<body class="post"
+>
+	<div id="header">
+		<header><a href="/"><img src="/style/idiotic.svg" alt="idiotic"></a></header>
+		<nav>
+			<span></span>
+			<ul>
+				
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<!--  -->
+						<li>
+							<a href="/about/">Who am I?</a>
+						</li>
+						<!--  -->
+						<!--  -->
+						<li>
+							<a href="/portfolio/">Examples of my work</a>
+						</li>
+						<!--  -->
+						<!--  -->
+						<li>
+							<a href="/projects/">Things I've made</a>
+						</li>
+						<!--  -->
+					<li>
+						<a href="/2016/05/21/atom/">Ramblings</a>
+					</li>
+				
+			</ul>
+		</nav>
+	</div>
+	<main>
+		<article>
+	<header>
+		<h1>Battle For Installation</h1>
+		<time datetime="2014-03-22 00:00:00 -0700">
+			March
+			22nd,
+				
+		2014</time>
+	</header>
+	<p>I recently came into possession of an ASUS 1225b netbook with Windows 7 installed. It’s a little beat up (the hinge is a goner) but a lot better than the nothing I had before. So, first things first, install Ubuntu.</p>
+
+<ul>
+  <li>Download the torrent</li>
+  <li>Grab a usb stick</li>
+  <li>Use <a href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank">UUI</a> to make it live</li>
+  <li>Change boot order</li>
+  <li>Boot and install</li>
+</ul>
+
+<p>Easy, right? Not so fast. I reboot and am presented with those horrid spinning balls of color that is the Windows boot screen. What happened, why have the gods of grub forsaken me?</p>
+
+<section>
+<h2 id="booting-fedora">Booting Fedora</h2>
+<p>My First thought is, of course, install grub manually. So I plug the usb back in and choose to run live. At this point I run into my fist major hiccup, the mouse and keyboard don’t work on 13.10 live. Well there are other live distributions out there.</p>
+
+<p>A quick download and install later and I’m booting to Fedora 20 live … only to have it hang. In vain I Google hoping to feed on the mistakes of those who have come before me, but none came to my rescue. As a last ditch effort, I decide to make a new usb with <code class="highlighter-rouge">dd</code> instead of UUI. The system barely fit on my usb so just maybe that created the issue. Only problem is that I do not have a linux installation. Our old friend Google spit out <a href="http://www.chrysocome.net/dd" target="_blank">dd for Windows</a>, copy that to <code class="highlighter-rouge">system32</code> and we’re in business.</p>
+
+<figure class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>dd <span class="k">if</span><span class="o">=</span>c:<span class="se">\U</span>sers<span class="se">\*</span><span class="k">**</span><span class="se">\D</span>ownloads<span class="se">\f</span>edora.iso <span class="nv">of</span><span class="o">=</span><span class="se">\\</span>.<span class="se">\f</span>:
+</pre></td></tr></tbody></table>
+</div>
+</figure>
+
+<p>Plug in the new usb stick and it boots!</p>
+
+</section>
+<section>
+<h2 id="reinstalling-grub">Reinstalling grub</h2>
+<p>Since we have a (presumably) working system installed, the easiest way to install grub is to <code class="highlighter-rouge">chroot</code> into Ubuntu and install from there.</p>
+
+<figure class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre>su -
+mount /dev/sda6 /mnt
+<span class="k">for </span>i <span class="k">in</span> /dev /dev/pts /proc /sys /run; <span class="k">do
+    </span>mount --bind <span class="nv">$i</span> /mnt<span class="nv">$i</span>
+<span class="k">done</span>
+
+<span class="c"># For internet access</span>
+mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.old
+cp /etc/resolv.conf /mnt/etc/resolv.conf
+
+chroot /mnt
+</pre></td></tr></tbody></table>
+</div>
+</figure>
+
+<p>Now to purge and reinstall grub.</p>
+
+<figure class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>apt-get update
+apt-get purge grub-common
+apt-get install grub-pc
+grub-install /dev/sda
+update-grub
+</pre></td></tr></tbody></table>
+</div>
+</figure>
+
+<p>Everything looks successful. I cross my finders, reboot … and I’m back to the Windows login screen. No no no, Where did I go wrong!</p>
+
+</section>
+<section>
+<h2 id="the-fix">The fix</h2>
+<p>I do some more Googling. I bump my head against the desk a few times. I comb through the BIOS looking for anything that would bypass grub. I … wait, there it is! I have two boot options:</p>
+
+<ul>
+  <li>primary harddisk</li>
+  <li>UEFI: my usb</li>
+</ul>
+
+<p>I was booting the install medium as UEFI. I’m not using UEFI, I do not have a UEFI partition. This must be the problem. Under the boot priority selection there’s harddisk priority selection. Change that to my usb, save &amp; reboot, repeat grub installation, reboot, and voilà!</p>
+
+<p>The moral of the story? Check your boot options <em>before</em> you install.</p>
+
+</section>
+<section>
+<h2 id="epilogue">Epilogue</h2>
+<p>One last thing, we have to move the resolve file back. I forgot and it took me way to long to realize why I could’t connect on some networks.</p>
+
+<figure class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>sudo rm /etc/resolv.conf
+sudo mv /etc/resolv.conf.old /etc/resolv.conf
+</pre></td></tr></tbody></table>
+</div>
+</figure>
+</section>
+
+</article>
+<div id="nav">
+ <a href="/2016/05/21/atom/">&larr; Atom [ insert physics pun ]</a> &ndash; 
+<a href="/blog/">Index</a>
+
+</div>
+<div id="disqus_thread"></div>
+<script>
+	var disqus_config = function () {
+		this.page.url = "http://idioticdev.com/2014/03/22/battle-for-installation/";
+		this.page.identifier = "/2014/03/22/battle-for-installation";
+		this.page.title = "Battle For Installation";
+	};
+
+	(function() {  // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = '//idiotic.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	</main>
+	<div id="links">
+		<a target="_blank" href="https://github.com/idiotic-development/idiotic-development.github.com">
+			<img src="/style/github.svg" alt="github">
+		</a>
+		<a href="mailto:timothy@idioticdev.com">
+			<img src="/style/mail.svg" alt="email">
+		</a>
+	</div>
+</body>
+</html>

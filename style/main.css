@@ -1,286 +1,301 @@
-.highlight
-{
-	background-color: transparent;
-	width: 100%;
-	margin-left: 10px;
+@import url("https://fonts.googleapis.com/css?family=Poiret+One|Nixie+One");
+@import "CentraleSans/main.css";
+body {
+  color: #808080;
+  font-family: "Centrale Sans";
+  line-height: 1.5em;
+}
+body h1,
+body h2,
+body h3 {
+  color: #e42c60;
+  font-weight: 300;
+  font-family: "Poiret One";
+  margin-top: 60px;
+  line-height: normal;
+}
+body h1 {
+  font-size: 4em;
+  margin-left: -25px;
+  margin-bottom: 80px;
+}
+body h2 {
+  font-size: 2.5em;
+  margin-left: -20px;
+}
+body h3 {
+  font-size: 2em;
+  margin-left: 15px;
+}
+body strong {
+  font-weight: 300;
+  color: #5a5a5a;
+}
+body a {
+  color: #e42c60;
+  text-decoration: none;
+}
+body a:focus {
+  outline: none;
+}
+body a:hover {
+  color: #a9163f;
+  border-bottom: 1px dotted #a9163f;
+}
+body ul li {
+  position: relative;
+  list-style-type: none;
+}
+body ul li::before {
+  content: ' ';
+  position: absolute;
+  left: -20px;
+  border: 1px solid #dfdfdf;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+body ol {
+  counter-reset: counter;
+}
+body ol li {
+  position: relative;
+  list-style-type: none;
+}
+body ol li::before {
+  content: counter(counter);
+  counter-increment: counter;
+  position: absolute;
+  left: -60px;
+  top: -5px;
+  font-size: 3em;
+  line-height: 1em;
+  font-style: italic;
+  text-align: right;
+  width: 30px;
+}
+#header {
+  width: 350px;
+}
+#header header a {
+  display: block;
+}
+#header header a:hover {
+  border-width: 0;
+}
+#header header a img {
+  width: 250px;
+  margin: 50px 0 15px 10px;
+}
+#header nav {
+  display: block;
+  width: 80%;
+}
+#header nav span {
+  display: block;
+  position: absolute;
+  left: 45px;
+  width: 1px;
+  height: 20px;
+  background-color: #e42c60;
+  transition: top 0.5s;
+}
+#header nav li {
+  list-style-type: none;
+}
+#header nav li::before {
+  border-width: 0;
+}
+#header nav li a {
+  display: block;
+  color: #808080;
+  border-width: 0;
+  font-family: "Nixie One";
+  padding: 10px;
+}
+#header nav li a:hover {
+  color: #5a5a5a;
+}
+#links {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 4;
+}
+#links a:hover {
+  border-width: 0;
+}
+#links img {
+  width: 38px;
+  opacity: 0.1;
+  vertical-align: bottom;
+  margin: 2px;
+}
+#links img:hover {
+  opacity: 0.8;
+}
+.lineno {
+  margin-right: 20px;
+  color: #ddd;
+}
+main {
+  display: block;
+  position: relative;
+  bottom: 30px;
+  margin: 0 50px 0 300px;
+}
+@media only screen and (max-width: 1000px) {
+  main {
+    margin: 20px;
+  }
+  #header {
+    width: 100%;
+  }
+  #header header a {
+    border-width: 0;
+  }
+  #header header a img {
+    width: 90%;
+  }
+}
+.index #header {
+  width: 100%;
+}
+.index #header header a {
+  position: absolute;
+  bottom: calc(50% - 30px);
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  border-width: 0;
+}
+.index #header header a img {
+  width: 50%;
+}
+.index #header nav span {
+  display: none;
+}
+.index #header nav ul {
+  position: absolute;
+  bottom: calc(50% - 100px);
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+.index #header nav ul li {
+  display: inline-block;
+  position: relative;
+}
+.index #header nav ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  height: 1px;
+  width: 0;
+  background-color: #e42c60;
+  transition: width 1s;
+}
+.index #header nav ul li:hover::after {
+  width: 35px;
+}
+.post #disqus_thread {
+  margin-top: 100px;
+}
+.post header {
+  display: inline-block;
+  position: relative;
+}
+.post header time {
+  position: absolute;
+  bottom: 55px;
+  right: -25px;
+  font-family: "Poiret One";
+  letter-spacing: 2px;
+}
+.post #nav {
+  text-align: center;
+  margin: 20px;
+}
+.portfolio .flow {
+  font-size: 0;
+}
+.portfolio .flow a {
+  position: relative;
+  width: 32%;
+  display: inline-block;
+}
+.portfolio .flow a img {
+  width: 100%;
+  vertical-align: top;
+}
+.portfolio .flow a span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: calc(100% - 20px);
+  background-color: rgba(0,0,0,0.6);
+  color: #dfdfdf;
+  font-size: 15px;
+  padding: 0 10px;
+  overflow: hidden;
+}
+.portfolio .flow a:hover {
+  border-width: 0;
+}
+.portfolio .flow a:hover span {
+  height: 20px;
+  padding: 7px 10px;
+}
+@media only screen and (max-width: 1000px) {
+  .portfolio .flow a {
+    width: 49%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .portfolio .flow a {
+    width: 100%;
+  }
+}
+.projects main a {
+  display: block;
+  position: relative;
+  height: 150px;
+  color: #8d8d8d;
+  margin: 50px 0;
+  padding-left: 10px;
+  min-width: 470px;
+}
+.projects main a:hover {
+  border-width: 0;
+  color: #8d8d8d;
+}
+.projects main a::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #e42c60;
+  transition: width 0.5s ease-out;
+}
+.projects main a:hover::after {
+  width: 100px;
+  transition-duration: 1s;
+}
+.projects main a span {
+  display: inline-block;
+  width: 300px;
+  height: 100%;
+}
+.projects main a span h2 {
+  margin: 40px 0 30px 0;
+  color: #5d5d5d;
+}
+.projects main a img {
+  vertical-align: bottom;
 }
 
-.code
-{
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;	-ms-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;	-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07) inset;
-}
-
-.highlighttable
-{
-	border: 1px solid #DEDEDE;
-	width: 100%;
-	border-spacing: 0;
-	border-radius: 10px;	-ms-border-radius: 10px;	-moz-border-radius: 10px;	-webkit-border-radius: 10px;
-}
-
-.linenos
-{
-	color: #aaaaaa;
-	background-color: #f2f2f2;
-	border-right: 1px solid #e0e0e0;
-	box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;	-ms-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;	-moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;	-webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) inset;
-	text-align: right;
-	padding-right: 10px;
-	width: 35px;
-	border-top-left-radius: 10px;	-ms-border-top-left-radius: 10px;	-moz-border-top-left-radius: 10px;	-webkit-border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;	-ms-border-bottom-left-radius: 10px;	-moz-border-bottom-left-radius: 10px;	-webkit-border-bottom-left-radius: 10px;
-	padding-bottom: 12px;
-}
-
-td
-{
-	border-width: 0;
-}
-
-html, body
-{
-	height: 100%;
-}
-
-body
-{
-	color: #111111;
-	background-color: #ffffff;
-	font-family: OpenSans, sans-serif;
-	font-size: 1.2vw;
-	margin: 0;
-}
-
-
-@font-face {
-	font-family: 'OpenSans';
-	src: url('opensans/opensans.eot');
-	src: url('opensans/opensans.eot') format('embedded-opentype'),
-		 url('opensans/opensans.woff') format('woff'),
-		 url('opensans/opensans.ttf') format('truetype'),
-		 url('opensans/opensans.svg#OpenSansRegular') format('svg');
-}
-
-h1, h2, h3, h4, h5, h6
-{
-	color: #505050;
-	font-family: OpenSansLight, sans-serif;
-	margin: 1vw 0;
-}
-@font-face {
-	font-family: 'OpenSansLight';
-	src: url('opensans/opensans-light.eot');
-	src: url('opensans/opensans-light.eot') format('embedded-opentype'),
-		 url('opensans/opensans-light.woff') format('woff'),
-		 url('opensans/opensans-light.ttf') format('truetype'),
-		 url('opensans/opensans-light.svg#OpenSansRegular') format('svg');
-}
-
-h1
-{
-	font-size: 5vw;
-}
-
-h2
-{
-	font-size: 3vw;
-}
-
-h3 a
-{
-	color: #505050;
-}
-
-p
-{
-	margin: 1vw 0;
-}
-
-a
-{
-	color: #888888;
-	text-decoration: none;
-}
-
-a:hover
-{
-	color: #444444;
-}
-
-time:before
-{
-	content: "\f073";
-	font-family: FontAwesome;
-	margin: 5px;
-}
-
-.tags:before
-{
-	content: "\f02c";
-	font-family: FontAwesome;
-	margin: 5px;
-}
-
-.warning:before
-{
-	content: "\f071";
-	font-family: FontAwesome;
-	margin: 5px;
-}
-
-a[target="_blank"]:after
-{
-	content: "\f08e";
-	font-family: FontAwesome;
-	margin: 1px;
-	font-size: 0.6em;
-	position: relative;
-	bottom: 9px;
-}
-
-@font-face {
-	font-family: 'FontAwesome';
-	src: url('symbles/fontawesome-webfont.eot');
-	src: url('symbles/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('symbles/fontawesome-webfont.woff') format('woff'),
-		 url('symbles/fontawesome-webfont.ttf') format('truetype'),
-		 url('symbles/fontawesome-webfont.svg#fontawesomeregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-hr
-{
-	color: #eeeeee;
-	background-color: #eeeeee;
-	border-color: #eeeeee;
-	border-width: 0;
-	width: 75%;
-	height: 2px;
-	position: relative;
-	right: 49px;
-	float: left;
-}
-
-hr:after, hr:before
-{
-	content: "";
-	color: #cccccc;
-	background-color: #cccccc;
-	border-color: #cccccc;
-	width: 20px;
-	height: 1px;
-	position: absolute;
-	right: -5px;
-	top: 6px;
-
-	transform: rotate(-45deg);	-ms-transform: rotate(-45deg);	-moz-transform: rotate(-45deg);	-webkit-transform: rotate(-45deg);
-}
-
-hr:before
-{
-	top: -7px;
-
-	transform: rotate(45deg);	-ms-transform: rotate(45deg);	-moz-transform: rotate(45deg);	-webkit-transform: rotate(45deg);
-}
-
-#header img
-{
-	width: 90%;
-	margin: 5%;
-}
-
-#content
-{
-	padding: 1vw 0;
-	margin-left: 23vw;
-}
-
-.button
-{
-	position: relative;
-	background-color: #f9f9f9;
-	padding: 1vw;
-	margin-top: 1vw;
-}
-
-.button:hover
-{
-	background-color: #f5f5f5;
-}
-
-#sidebar
-{
-	background-color: #005EB9;
-	width: 23vw;
-	height: 100%;
-	position: fixed;
-	overflow: auto;
-}
-
-ul#menu
-{
-	font-family: OpenSansLight;
-	list-style: none;
-	width: 80%;
-	position: absolute;
-	right: 0;
-}
-
-#menu a#current
-{
-	border-right-color: #666666;
-}
-
-#menu a
-{
-	color: #ffffff;
-	border-right: 5px solid #555;
-	text-decoration: none;
-	font-size: 2vw;
-	letter-spacing: 0;
-	padding: 10px;
-	display: block;
-
-	transition: all 1s;	-ms-transition: all 1s;	-moz-transition: all 1s;	-webkit-transition: all 1s;
-}
-
-#menu a:hover
-{
-	letter-spacing: 4px;
-}
-
-#sidebar.topdown
-{
-	width: 100%;
-	height: auto;
-	position: relative;
-}
-
-#sidebar.topdown #menu
-{
-	width: auto;
-	position: relative;
-}
-
-#sidebar.topdown #menu a
-{
-	font-size: 10vw;
-}
-
-#content.topdown
-{
-	width: auto;
-	margin-left: 0;
-	font-size: 5vw;
-}
-
-#content.topdown h1
-{
-	font-size: 10vw;
-}
-
-#content.topdown header
-{
-	font-size: 3vw;
-}
