@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+html, body {
+    padding: 0;
+    margin: 0
+}
+
+body {
+    font: 1.1em 'Open Sans', Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+body h1, body h2 {
+    color: #458100;
+    font-size: 2em
+}
+
+body h3 {
+    color: #458100;
+    font-weight: normal
+}
+
+body a {
+    color: #444;
+    text-decoration: none;
+}
+
+body a:hover {
+    text-decoration: underline
+}
+
+#header {
+    border-bottom: 20px solid #5daf00;
+    padding: 15px;
+}
+
+#header div {
+    width: 1000px;
+    margin: 0 auto
+}
+
+#header p {
+    float: right;
+    text-align: right;
+    margin-right: 25px;
+    color: #444;
+}
+
+#header p span {
+    display: block;
+    font-weight: bold
+}
+
+#first {
+    width: 1000px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+#first form {
+    float: right;
+    background-color: #ebffea;
+    padding: 20px 30px 30px;
+    margin-left: 20px;
+    width: 333.3333333333333px;
+}
+
+#first form label {
+    color: #555;
+    margin: 10px 0;
+    display: block
+}
+
+#first form input {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin: 5px 0;
+}
+
+#first form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    color: #444
+}
+
+#first form h3 {
+    position: relative;
+    left: -10px
+}
+
+#first form p {
+    font-size: .7em
+}
+
+#first h1 {
+    margin: 50px 0
+}
+
+#first #checkmarks li {
+    list-style-image: url("images/check.png");
+    margin: 30px
+}
+
+#first #dealers {
+    text-align: center;
+}
+
+#first #dealers img {
+    height: 65px;
+    padding: 15px
+}
+
+#second {
+    width: 1000px;
+    padding: 0 20px;
+    margin: 80px auto;
+}
+
+#second ul {
+    display: block;
+    width: 800px;
+}
+
+#second ul li {
+    list-style-type: circle;
+    margin: 5px
+}
+
+#second iframe {
+    display: block;
+    margin: 150px auto
+}
+
+#third {
+    background-color: #ebffea;
+    padding: 30px 0 50px;
+    margin: 70px 0 100px;
+}
+
+#third div {
+    width: 800px;
+    margin: 0 auto
+}
+
+#fourth {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#fourth blockquote {
+    margin: 0;
+    padding: 15px;
+    margin: 30px;
+}
+
+#fourth blockquote p {
+    margin: 0 0 30px;
+    padding: 0
+}
+
+#fourth blockquote footer {
+    text-align: right;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0.3)
+}
+
+#fourth blockquote:nth-child(2) {
+    position: relative;
+    left: 20px
+}
+
+#fourth blockquote:nth-child(3) {
+    position: relative;
+    left: -20px
+}
+
+#fourth blockquote:nth-child(4) {
+    position: relative;
+    left: 40px
+}
+
+#footer {
+    background-color: #141414;
+    color: #bbb;
+    padding-left: 60px;
+}
+
+#footer p {
+    display: inline-block;
+    margin: 50px 40px;
+    vertical-align: top;
+}
+
+#footer p a {
+    color: #888;
+    text-decoration: none;
+}
+
+#footer p a:hover {
+    color: #aaa
+}
+
+#footer img {
+    width: 200px;
+    margin: 50px 40px
+}
